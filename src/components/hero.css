@@ -1,0 +1,60 @@
+.hero-bg {
+    width: 29rem;
+    height: 28rem;
+}
+
+.hero-text {
+    background: linear-gradient(
+        to right,
+        #f72585 20%,
+        #4cc9f0 30%,
+        #fb5607 70%,
+        #7209b7 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: glitter 5s ease-in-out infinite alternate;
+}
+
+@keyframes glitter {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .hero-bg {
+        width: 20rem;
+        height: 20rem;
+        top: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .hero-bg {
+        width: 20rem;
+        height: 20rem;
+        top: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero-bg {
+        width: 19rem;
+        height: 19rem;
+        top: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .hero-bg {
+        width: 18rem;
+        height: 18rem;
+    }
+}

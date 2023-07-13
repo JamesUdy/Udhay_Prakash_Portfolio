@@ -1,0 +1,15 @@
+.time-text {
+    background: linear-gradient(
+        to right,
+        #ff0054 20%,
+        #00b4d8 30%,
+        #bfd200 70%,
+        #7209b7 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: glitter 5s ease-in-out infinite alternate;
+}

@@ -1,0 +1,20 @@
+.work-text {
+    background: linear-gradient(
+        to right,
+        #00ff11 30%,
+        #00b4d8 30%,
+        #bfd200 70%,
+        #037ef9 70%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: glitter 5s ease-in-out infinite alternate;
+}
+
+.work-card-bg {
+    background: linear-gradient(277deg, rgba(140, 69, 198, 0.571) 0%, rgba(60, 9, 108, 0.679) 35%, rgba(16, 0, 43, 0.734) 100%);
+}
+

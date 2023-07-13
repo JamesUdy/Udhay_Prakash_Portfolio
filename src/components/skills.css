@@ -1,0 +1,23 @@
+.skill-text {
+    background: linear-gradient(
+        to right,
+        #f72585 20%,
+        #4cc9f0 30%,
+        #fb5607 70%,
+        #3109d0 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: glitter 5s ease-in-out infinite alternate;
+}
+
+.download {
+    background: linear-gradient(277deg, rgba(157, 78, 221, 0.434) 0%, rgba(60, 9, 108, 0.588) 35%, rgba(16, 0, 43, 0.626) 100%);
+}
+
+.download:hover {
+    background: linear-gradient(277deg, rgba(16, 0, 43, 0.341)  0%, rgba(60, 9, 108, 0.495) 35%, rgba(157, 78, 221, 0.549) 100%);
+}

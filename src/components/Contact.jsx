@@ -9,15 +9,16 @@ import './contact.css'
 const Contact = () => {
     const formRef = useRef();
     const [form, setForm] = useState({
-        name: '',
-        email: '',
-        message: '',
+        name: "",
+        email: "",
+        message: "",
     });
 
     const [loading, setLoading] = useState(false)
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const {target} = e
+        const {name, value} = target;
         setForm({...form, [name]:value})
     }
 
@@ -27,7 +28,7 @@ const Contact = () => {
 
         emailjs.send(
             'service_02o4n3k', 
-            'template_ucoe64t',
+            'template_wzx16is',
             {
                from_name: form.name,
                to_name: 'Udhay',
@@ -35,15 +36,15 @@ const Contact = () => {
                to_email: 'udayamvad@gmail.com',
                message: form.message ,
             },
-            '107o2CoAPdnh544Hr'
+            'maS8yYYKuZ56q3uQh'
             )
             .then(() => {
                 setLoading(false);
                 alert('I respect your message and will respond as soon as I can. 😉');
             setForm({
-                name: '',
-                email: '',
-                message: '',
+                name: "",
+                email: "",
+                message: "",
             });
             },
             (error) => {
@@ -54,8 +55,9 @@ const Contact = () => {
     }
 
     return (
-        <div className="xl:mt-10 overflow-hidden w-1/2 ">
-            <motion.div variants={slideIn('left', "tween", 0.2, 1)} className="flex-[0.75] contact-bg p-8 rounded-2xl">
+        <div className="xl:mt-10 overflow-hidden w-64 md:w-1/2">
+            <motion.div variants={slideIn('right', "tween", 0.2, 1)} className="flex-[0.75] contact-bg p-8 rounded-2xl">
+            
                 <p className={styles.sectionSubText} ><span className="contact-text font-semibold text-lg">GET IN TOUCH</span> 📩</p>
                 <h3 className={styles.sectionHeadText}>Contact.</h3>
 

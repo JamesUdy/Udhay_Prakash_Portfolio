@@ -5,6 +5,7 @@ import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import styled from "styled-components"
 import './hero.css'
 import {styles} from '../styles'
+import { avatar, bgImg  } from "../assets";
 
 const Img = styled.img`
   object-fit: contain;
@@ -26,7 +27,7 @@ const Img = styled.img`
 export default function Hero() {
     return (
         <section className="relative mb-20 mx-auto lg:mb-5">
-                <video autoPlay loop muted src="src\assets\hero-bg.mp4" className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video>
+                <video autoPlay loop muted src={bgImg} className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video>
                 <div className={`absolute lg:top-40 top-44 sm:top-28 left-16 right-16`}>
                     <div className=" flex  flex-col items-center lg:flex-row justify-around">
                         <div>
@@ -49,7 +50,7 @@ export default function Hero() {
                                     </Sphere>
                                 </Suspense>
                             </Canvas>
-                            <Img src="src/assets/avatar.png"/>
+                            <Img src={avatar}/>
                         </div>
                         </div>
                 </div>

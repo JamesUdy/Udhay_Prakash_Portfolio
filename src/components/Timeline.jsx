@@ -63,4 +63,4 @@ const Timeline = () => {
     )
 }
 
-export default Wrapper(Timeline, "work")
+export default Wrapper(Timeline, "")

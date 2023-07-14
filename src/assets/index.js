@@ -1,4 +1,6 @@
-import logo from "./logo.png";
+import logo from "./Logo.png";
+import avatar from "./avatar.png"
+import bgImg from "./hero-bg.mp4"
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -17,6 +19,8 @@ import chargingStrategy from "./charging-strategy.png"
 
 export {
   logo,
+  avatar,
+  bgImg,
   backend,
   creator,
   mobile,

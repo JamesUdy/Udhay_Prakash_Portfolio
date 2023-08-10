@@ -30,7 +30,7 @@ const ProjectCard = (project) => {
                                 <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
                             </div>
                             {project.demo && <div onClick={() => window.open(project.demo, "_blank")} className="black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer mx-1">
-                                <img src={live} alt="live" className="w-fit h-fit object-contain" />
+                                <img src={live} alt="live" className="w-1/2 h-1/2 object-contain" />
                             </div>}
                         </div>
                     </div>

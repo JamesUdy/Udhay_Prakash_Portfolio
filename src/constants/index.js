@@ -7,6 +7,7 @@ import {
     nft,
     netzon5,
     grabNgo,
+    budgetBuddy,
     laBelle,
     chargingStrategy,
   } from "../assets";
@@ -74,16 +75,28 @@ import {
       name: "MongoDB",
     },
     {
-      name: "Three JS",
+      name: "Next JS",
     },
     {
       name: "GitHub",
+    },
+    {
+      name: "Markdown",
     },
     {
       name: "Figma",
     },
     {
       name: "Java",
+    },
+    {
+      name: "Miro",
+    },
+    {
+      name: "Subline Merge",
+    },
+    {
+      name: "Speechly",
     },
     {
       name: "Python",
@@ -126,39 +139,13 @@ import {
     },
     {
       id: 3,
-      title: "💻 Getting involved with web design and development projects",
+      title: "💻 Getting involved with web design and development projects (Freelancer) ",
       location: "Remote 📍",
       date: "Apr 2023 - present"
     }
   ];
   
   const projects = [
-    {
-      title: "Netzon5-Online OTT Streaming Platform",
-      description:
-        "The website is entirely responsive and uses the TMDB API to search over 1000+ films while offering narrative details, IMDB ratings, genre, and the year of release. The difficulties found in the code are made easy using Tailwind and platform allows multitasking of several pages simultaneously.",
-      tags: [
-        {
-          skills: "javascript",
-          color: "blue-text-gradient",
-        },
-        {
-          skills: "html",
-          color: "green-text-gradient",
-        },
-        {
-          skills: "tailwind",
-          color: "pink-text-gradient",
-        },
-        {
-          skills: "api",
-          color: "blue-text-gradient",
-        },
-      ],
-      image: netzon5,
-      source: "https://github.com/JamesUdy/Netzon5",
-      status: "developing"
-    },
     {
       title: "Nifter-NFT Marketplace",
       description:
@@ -189,7 +176,7 @@ import {
     {
       title: "Grab N Go",
       description:
-        "Machine learning model that merges 2 significant fields - Data Science, Web Development to estimate the prices of houses in Bangalore. Specializes in providing accurate prices",
+        "Developed a responsive Grab and Go website with Firebase integration for real-time grocery item storage. Implemented CRUD operations (Create, Read, Update, Delete) to enable users to add and delete grocery items effortlessly. Ensured data security and privacy through Firebase Authentication, allowing only authorized users to access and manage the grocery list.",
       tags: [
         {
           skills: "javascript",
@@ -212,6 +199,59 @@ import {
       source: "https://github.com/JamesUdy/Grab_N_Go",
       status: "completed",
       demo: "https://grab-n-go.netlify.app/"
+    },
+    {
+      title: "Budget Buddy",
+      description:
+        "Developed Budget Buddy website with voice recognition technology for automated income and expense tracking. Implemented real-time financial analysis through dynamic visual graphs to facilitate data-driven decision-making. Streamlined budget management with an intuitive interface and automated data entry for improved user experience.",
+      tags: [
+        {
+          skills: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          skills: "javascript",
+          color: "pink-text-gradient",
+        },
+        {
+          skills: "tailwind-css",
+          color: "green-text-gradient",
+        },
+        {
+          skills: "voice assist",
+          color: "blue-text-gradient",
+        },
+      ],
+      image: budgetBuddy,
+      source: "https://github.com/JamesUdy/Budget-Buddy",
+      status: "completed",
+      demo: "https://budget-buddy15.netlify.app/"
+    },
+    {
+      title: "Netzon5-Online OTT Streaming Platform",
+      description:
+        "The website is entirely responsive and uses the TMDB API to search over 1000+ films while offering narrative details, IMDB ratings, genre, and the year of release. The difficulties found in the code are made easy using Tailwind and platform allows multitasking of several pages simultaneously.",
+      tags: [
+        {
+          skills: "javascript",
+          color: "blue-text-gradient",
+        },
+        {
+          skills: "html",
+          color: "green-text-gradient",
+        },
+        {
+          skills: "tailwind",
+          color: "pink-text-gradient",
+        },
+        {
+          skills: "api",
+          color: "blue-text-gradient",
+        },
+      ],
+      image: netzon5,
+      source: "https://github.com/JamesUdy/Netzon5",
+      status: "developing"
     },
     {
       title: "Real-Estate Price Prediction Using Linear Regression - Machine Learning",

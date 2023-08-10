@@ -15,6 +15,7 @@ import nft from "./nft-marketplace.png";
 import laBelle from "./la-belle-assiette.png";
 import netzon5 from "./netzon5.png";
 import grabNgo from "./grab-n-go.png"
+import budgetBuddy from "./budget-buddy.png"
 import chargingStrategy from "./charging-strategy.png"
 
 export {
@@ -33,6 +34,7 @@ export {
   nft,
   netzon5,
   grabNgo,
+  budgetBuddy,
   laBelle,
   chargingStrategy,
 };

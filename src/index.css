@@ -23,13 +23,28 @@
   background: #000000;
   background: -webkit-linear-gradient(
     to right,
-    #434343,
+    #000000,
     #000000
   ); 
   background: linear-gradient(
     to right,
-    #434343,
+    #555555b3,
     #000000
+    
+  ); 
+}
+
+.violet-gradient {
+  background: #000000;
+  background: -webkit-linear-gradient(
+    to right,
+    #08d0b5,
+    #92db0a
+  ); 
+  background: linear-gradient(
+    to right,
+    #6a02fc9a,
+    #f200ff44
   ); 
 }
 

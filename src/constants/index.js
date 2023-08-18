@@ -120,6 +120,9 @@ import {
       name: "MATLAB",
     },
     {
+      name: "Vercel",
+    },
+    {
       name: "Netlify",
     },
   ];

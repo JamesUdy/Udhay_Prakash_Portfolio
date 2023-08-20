@@ -50,7 +50,7 @@ export default function Hero() {
                                     </Sphere>
                                 </Suspense>
                             </Canvas>
-                            <Img src={avatar}/>
+                            <Img src={avatar} alt="Hero Image" />
                         </div>
                         </div>
                 </div>

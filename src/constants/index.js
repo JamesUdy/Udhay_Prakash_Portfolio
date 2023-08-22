@@ -228,7 +228,7 @@ import {
       image: budgetBuddy,
       source: "https://github.com/JamesUdy/Budget-Buddy",
       status: "completed",
-      demo: "https://budget-buddy15.netlify.app/"
+      demo: "https://budget-buddy15.vercel.app/"
     },
     {
       title: "Netzon5-Online OTT Streaming Platform",

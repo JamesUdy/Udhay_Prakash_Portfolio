@@ -27,33 +27,35 @@ const Img = styled.img`
 export default function Hero() {
     return (
         <section className="relative mb-20 mx-auto lg:mb-5">
-                <video autoPlay loop muted src={bgImg} className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video>
-                <div className={`absolute lg:top-40 top-44 sm:top-28 left-16 right-16`}>
-                    <div className=" flex  flex-col items-center lg:flex-row justify-around">
-                        <div>
-                            <h1 className={`${styles.heroHeadText}`}>Hi, I'm <span className="hero-text">Udhaya Prakash M</span></h1>
-                            <p className={`${styles.heroSubText} mt-2 text-white-100`}>I develop captivating user interfaces <br className="sm:block hidden" /> for exceptional web experiences.</p>
-                        </div>
-                        <div className="relative hero-bg">
-                            <Canvas>
-                                <Suspense fallback={null}>
-                                    <OrbitControls enableZoom={false} />
-                                    <ambientLight intensity={0.5} />
-                                    <directionalLight position={[3, 2, 1]} />
-                                    <Sphere args={[1, 300, 300]} scale={2.5}>
-                                        <MeshDistortMaterial
-                                        color="#0077b6"
-                                        attach="material"
-                                        distort={0.5}
-                                        speed={2}
-                                        />
-                                    </Sphere>
-                                </Suspense>
-                            </Canvas>
-                            <Img src={avatar} alt="Hero Image" />
-                        </div>
-                        </div>
-                </div>
+                <Suspense fallback = {<div>Loading...</div>}>
+                    <video autoPlay loop muted src={bgImg} className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video>
+                    <div className={`absolute lg:top-40 top-44 sm:top-28 left-16 right-16`}>
+                        <div className=" flex  flex-col items-center lg:flex-row justify-around">
+                            <div>
+                                <h1 className={`${styles.heroHeadText}`}>Hi, I'm <span className="hero-text">Udhaya Prakash M</span></h1>
+                                <p className={`${styles.heroSubText} mt-2 text-white-100`}>I develop captivating user interfaces <br className="sm:block hidden" /> for exceptional web experiences.</p>
+                            </div>
+                            <div className="relative hero-bg">
+                                <Canvas>
+                                    <Suspense fallback={null}>
+                                        <OrbitControls enableZoom={false} />
+                                        <ambientLight intensity={0.5} />
+                                        <directionalLight position={[3, 2, 1]} />
+                                        <Sphere args={[1, 300, 300]} scale={2.5}>
+                                            <MeshDistortMaterial
+                                            color="#0077b6"
+                                            attach="material"
+                                            distort={0.5}
+                                            speed={2}
+                                            />
+                                        </Sphere>
+                                    </Suspense>
+                                </Canvas>
+                                <Img src={avatar} alt="Hero Image" />
+                            </div>
+                            </div>
+                    </div>
+                </Suspense>
         </section>        
     )
 }

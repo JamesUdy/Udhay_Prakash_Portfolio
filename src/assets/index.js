@@ -1,22 +1,22 @@
-import logo from "./Logo.png";
-import avatar from "./avatar.png"
+import logo from "./Logo.avif";
+import avatar from "./avatar.avif"
 import bgImg from "./hero-bg.mp4"
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
-import live from "./live.png"
+import backend from "./backend.avif";
+import creator from "./creator.avif";
+import mobile from "./mobile.avif";
+import web from "./web.avif";
+import github from "./github.avif";
+import live from "./live.avif"
 import menu from "./menu.svg";
 import close from "./close.svg"; 
 
-import predictor from "./real-estate-predictor.png";
-import nft from "./nft-marketplace.png";
-import laBelle from "./la-belle-assiette.png";
-import netzon5 from "./netzon5.png";
-import grabNgo from "./grab-n-go.png"
-import budgetBuddy from "./budget-buddy.png"
-import chargingStrategy from "./charging-strategy.png"
+import predictor from "./real-estate-predictor.avif";
+import nft from "./nft-marketplace.avif";
+import laBelle from "./la-belle-assiette.avif";
+import netzon5 from "./netzon5.avif";
+import grabNgo from "./grab-n-go.avif"
+import budgetBuddy from "./budget-buddy.avif"
+import chargingStrategy from "./charging-strategy.avif"
 
 export {
   logo,

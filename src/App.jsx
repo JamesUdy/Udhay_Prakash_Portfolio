@@ -6,7 +6,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className='relative z-90 bg-black'>
-      <div className=''>
+      <div>
         <Navbar />
         <Hero />
       </div>

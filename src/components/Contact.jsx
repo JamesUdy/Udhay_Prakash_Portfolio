@@ -64,12 +64,12 @@ const Contact = () => {
                 <form ref={formRef} onSubmit={handleSumbit} className="mt-6 flex flex-col gap-6">
                     <label className="flex flex-col">
                         <span className="text-white font-medium mb-2">Your Name</span>
-                        <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Enter Your Name" 
+                        <input type="text" name="name" autoComplete="first-name" id="first-name" value={form.name} onChange={handleChange} placeholder="Enter Your Name" 
                         className="bg-tertiary py-3 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium" />
                     </label>
                     <label className="flex flex-col">
                         <span className="text-white font-medium mb-2">Your Email</span>
-                        <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="What's your Email?" 
+                        <input type="email" name="email" id="email" autoComplete="off" value={form.email} onChange={handleChange} placeholder="What's your Email?" 
                         className="bg-tertiary py-3 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium" />
                     </label>
                     <label className="flex flex-col">

@@ -14,9 +14,10 @@ import predictor from "./real-estate-predictor.avif";
 import nft from "./nft-marketplace.avif";
 import laBelle from "./la-belle-assiette.avif";
 import netzon5 from "./netzon5.avif";
-import grabNgo from "./grab-n-go.avif"
-import budgetBuddy from "./budget-buddy.avif"
-import chargingStrategy from "./charging-strategy.avif"
+import grabNgo from "./grab-n-go.avif";
+import budgetBuddy from "./budget-buddy.avif";
+import chargingStrategy from "./charging-strategy.avif";
+import legacyCodeHQ from "./legacy-code-hq.avif";
 
 export {
   logo,
@@ -37,4 +38,5 @@ export {
   budgetBuddy,
   laBelle,
   chargingStrategy,
+  legacyCodeHQ,
 };

@@ -10,6 +10,7 @@ import {
     budgetBuddy,
     laBelle,
     chargingStrategy,
+    legacyCodeHQ,
   } from "../assets";
   
   export const navLinks = [
@@ -149,6 +150,33 @@ import {
   ];
   
   const projects = [
+    {
+      title: "Legacy Code HQ",
+      description:
+        "Revamped using Next.js, TypeScript, and Tailwind CSS, Legacy Code HQ's site now offers immersive interface. Integration of Google Analytics, robots.txt & CookiesYes enhances engagement & data-driven content strategies. Dynamic Next.js blog boosts visibility. Aligned with Kotlin Multi-platform migration, front-end solutions create unified, user-centric digital space.",
+      tags: [
+        {
+          skills: "next js",
+          color: "pink-text-gradient",
+        },
+        {
+          skills: "tailwind css",
+          color: "green-text-gradient",
+        },
+        {
+          skills: "typescript",
+          color: "blue-text-gradient",
+        },
+        {
+          skills: "markdown",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: legacyCodeHQ,
+      source: "https://github.com/LegacyCodeHQ/website.git",
+      status: "development",
+      demo: "https://www.legacycode.com/"
+    },
     {
       title: "Nifter-NFT Marketplace",
       description:

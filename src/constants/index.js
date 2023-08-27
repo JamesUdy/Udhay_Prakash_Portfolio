@@ -174,7 +174,7 @@ import {
       ],
       image: legacyCodeHQ,
       source: "https://github.com/LegacyCodeHQ/website.git",
-      status: "development",
+      status: "developing",
       demo: "https://www.legacycode.com/"
     },
     {

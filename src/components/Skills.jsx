@@ -27,23 +27,23 @@ const Skills = () => {
                 <Marquee className="py-2" direction="right">
                     {skillset.map(function(skill) {
                         return (
-                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7]">{` ${skill.name} `}</div>
+                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.image} alt={`${skill.name} Logo`} />{` ${skill.name} `}</div>
                         )
                     }
                     )}
                 </Marquee>
-                <Marquee className="py-2" delay={2.5}>
+                <Marquee className="py-2" delay={-2.5}>
                     {skillset.map(function(skill) {
                         return (
-                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7]">{` ${skill.name} `}</div>
+                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.image} alt={`${skill.name} Logo`} />{` ${skill.name} `}</div>
                         )
                     }
                     )}
                 </Marquee>
-                <Marquee className="py-2" direction="right" delay={5}>
+                <Marquee className="py-2" direction="right" delay={-5}>
                     {skillset.map(function(skill) {
                         return (
-                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7]">{` ${skill.name} `}</div>
+                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.image} alt={`${skill.name} Logo`} />{` ${skill.name} `}</div>
                         )
                     }
                     )}

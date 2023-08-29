@@ -11,6 +11,28 @@ import {
     laBelle,
     chargingStrategy,
     legacyCodeHQ,
+    markdown,
+    figma,
+    githubIcon,
+    html5,
+    css,
+    reactIcon,
+    tailwind,
+    typescript,
+    javascript,
+    bootstrap,
+    node,
+    mongodb,
+    next,
+    java,
+    python,
+    firebase,
+    tableau,
+    powerbi,
+    postman,
+    vscode,
+    vercel,
+    netlify,
   } from "../assets";
   
   export const navLinks = [
@@ -50,81 +72,91 @@ import {
   const skillset = [
     {
       name: "HTML 5",
+      image: html5,
     },
     {
       name: "CSS 3",
+      image: css,
     },
     {
       name: "JavaScript",
+      image: javascript,
     },
     {
       name: "TypeScript",
+      image: typescript,
     },
     {
       name: "React JS",
+      image: reactIcon,
     },
     {
       name: "Bootstrap CSS",
+      image: bootstrap,
     },
     {
       name: "Tailwind CSS",
+      image: tailwind,
     },
     {
       name: "Node JS",
+      image: node,
     },
     {
       name: "MongoDB",
+      image: mongodb,
     },
     {
       name: "Next JS",
+      image: next,
     },
     {
       name: "GitHub",
+      image: githubIcon,
     },
     {
       name: "Markdown",
+      image: markdown,
     },
     {
       name: "Figma",
+      image: figma,
     },
     {
       name: "Java",
-    },
-    {
-      name: "Miro",
-    },
-    {
-      name: "Subline Merge",
-    },
-    {
-      name: "Speechly",
+      image: java,
     },
     {
       name: "Python",
+      image: python,
     },
     {
       name: "Postman",
+      image: postman,
     },
     {
       name: "Power Bi",
+      image: powerbi,
     },
     {
       name: "Tableau",
+      image: tableau,
     },
     {
       name: "Firebase",
+      image: firebase,
     },
     {
       name: "VSCode",
-    },
-    {
-      name: "MATLAB",
+      image: vscode,
     },
     {
       name: "Vercel",
+      image: vercel,
     },
     {
       name: "Netlify",
+      image: netlify,
     },
   ];
   

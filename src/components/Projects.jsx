@@ -18,7 +18,7 @@ const ProjectCard = (project) => {
         <motion.div variants={fadeIn("up","spring",project.index*0.5,0.75)}>
             <Tilt options={{
                 max: 45, scale: 1, speed: 450,
-            }} className="work-card-bg p-3 xs:p-5 rounded-2xl w-full xs:w-[360px] md:h-[560px] lg:h-[540px]">
+            }} className="work-card-bg p-3 xs:p-5 rounded-2xl w-full xs:w-[420px] md:h-[560px] lg:h-[520px]">
                     <div className="relative xs:w-full md:h-[160px] lg:h-[230px]">
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-2xl" />
                     <div className="absolute inset-0 flex justify-between flex-row  m-3 card-img_hover">

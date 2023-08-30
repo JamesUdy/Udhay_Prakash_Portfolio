@@ -1,11 +1,11 @@
-import React, { Suspense } from "react"
+import React, { Suspense, useState } from "react"
 import "../index.css"
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import styled from "styled-components"
 import './hero.css'
 import {styles} from '../styles'
-import { avatar, bgImg  } from "../assets";
+import { avatar, bgImg, bgVideo  } from "../assets";
 
 const Img = styled.img`
   object-fit: contain;
@@ -25,10 +25,23 @@ const Img = styled.img`
 `;
 
 export default function Hero() {
+    const [videoLoaded, setVideoLoaded] = useState(false);
+
+    const handleVideoLoad = () => {
+      setVideoLoaded(true);
+    };
     return (
         <section className="relative mb-20 mx-auto lg:mb-5">
-                <Suspense fallback = {<div>Loading...</div>}>
-                    <video autoPlay loop muted src={bgImg} className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video>
+                    {/* <video autoPlay loop muted src={bgImg} className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video> */}
+                    <video
+                autoPlay
+                loop
+                muted
+                src={bgVideo}
+                className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"
+                onLoadedData={handleVideoLoad}
+                poster={videoLoaded ? null : bgImg}
+            ></video>
                     <div className={`absolute lg:top-40 top-44 sm:top-28 left-16 right-16`}>
                         <div className=" flex  flex-col items-center lg:flex-row justify-around">
                             <div>
@@ -56,7 +69,6 @@ export default function Hero() {
                             </div>
                             </div>
                     </div>
-                </Suspense>
         </section>        
     )
 }

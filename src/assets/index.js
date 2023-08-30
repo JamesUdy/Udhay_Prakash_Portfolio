@@ -1,6 +1,7 @@
 import logo from "./Logo.avif";
 import avatar from "./avatar.avif"
-import bgImg from "./hero-bg.mp4"
+import bgVideo from "./hero-bg.mp4"
+import bgImg from "./hero-bg.avif"
 import backend from "./backend.avif";
 import creator from "./creator.avif";
 import mobile from "./mobile.avif";
@@ -45,6 +46,7 @@ import netlify from "./icons/netlify.svg";
 export {
   logo,
   avatar,
+  bgVideo,
   bgImg,
   backend,
   creator,

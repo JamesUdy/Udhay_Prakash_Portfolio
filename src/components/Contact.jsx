@@ -84,4 +84,4 @@ const Contact = () => {
     )
 }
 
-export default Wrapper(Contact,"contact")
+export default Wrapper(Contact,"contact");

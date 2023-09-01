@@ -32,7 +32,6 @@ export default function Hero() {
     };
     return (
         <section className="relative mb-20 mx-auto lg:mb-5">
-                    {/* <video autoPlay loop muted src={bgImg} className="object-cover relative w-full h-[700px] sm:h-[650px] md:h-[700px] lg:h-[700px]"></video> */}
                     <video
                         autoPlay
                         loop
@@ -71,4 +70,4 @@ export default function Hero() {
                     </div>
         </section>        
     )
-}
+};

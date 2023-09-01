@@ -18,4 +18,4 @@ const Wrapper= (Component, idName) =>
         )
 }
 
-export default Wrapper
+export default Wrapper;

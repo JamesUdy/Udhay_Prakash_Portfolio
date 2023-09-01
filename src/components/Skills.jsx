@@ -56,4 +56,4 @@ const Skills = () => {
     )
 }
 
-export default Wrapper(Skills, "")
+export default Wrapper(Skills, "");

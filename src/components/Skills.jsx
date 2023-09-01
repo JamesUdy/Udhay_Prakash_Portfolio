@@ -27,7 +27,7 @@ const Skills = () => {
                 <Marquee className="py-2" direction="right">
                     {skillset.map(function(skill) {
                         return (
-                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.image} alt={`${skill.name} Logo`} />{` ${skill.name} `}</div>
+                            <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.image} alt={`${skill.name} Logo`} className="w-4 h-4" />{` ${skill.name} `}</div>
                         )
                     }
                     )}

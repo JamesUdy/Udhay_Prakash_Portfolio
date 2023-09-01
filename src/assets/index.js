@@ -1,7 +1,8 @@
 import logo from "./Logo.avif";
-import avatar from "./avatar.avif"
-import bgVideo from "./hero-bg.mp4"
-import bgImg from "./hero-bg.avif"
+import avatar from "./avatar.avif";
+import bgVideo from "./hero-bg.mp4";
+import bgVid from "./hero-bg.webm";
+import bgImg from "./hero-bg.avif";
 import backend from "./backend.avif";
 import creator from "./creator.avif";
 import mobile from "./mobile.avif";
@@ -47,6 +48,7 @@ export {
   logo,
   avatar,
   bgVideo,
+  bgVid,
   bgImg,
   backend,
   creator,

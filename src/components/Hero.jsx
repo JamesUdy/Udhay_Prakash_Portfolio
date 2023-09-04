@@ -5,7 +5,7 @@ import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import styled from "styled-components"
 import './hero.css'
 import {styles} from '../styles'
-import { avatar, bgImg, bgVideo, bgVid } from "../assets";
+import { avatar, bgImg, bgVid } from "../assets";
 
 const Img = styled.img`
   object-fit: contain;

@@ -12,7 +12,7 @@ import menu from "./menu.svg";
 import close from "./close.svg"; 
 
 import predictor from "./real-estate-predictor.avif";
-import nft from "./nft-marketplace.avif";
+import niftique from "./Niftique.avif";
 import laBelle from "./la-belle-assiette.avif";
 import netzon5 from "./netzon5.avif";
 import grabNgo from "./grab-n-go.avif";
@@ -57,7 +57,7 @@ export {
   menu,
   close,
   predictor,
-  nft,
+  niftique,
   netzon5,
   grabNgo,
   budgetBuddy,

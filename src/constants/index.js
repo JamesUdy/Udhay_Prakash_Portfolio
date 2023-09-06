@@ -4,7 +4,7 @@ import {
     creator,
     web,
     predictor,
-    nft,
+    niftique,
     netzon5,
     grabNgo,
     budgetBuddy,
@@ -210,16 +210,16 @@ import {
       demo: "https://www.legacycode.com/"
     },
     {
-      title: "Nifter-NFT Marketplace",
+      title: "NIFTIQUE - NFT MARKETPLACE & CRYPTO CONVERTER DEVELOPMENT",
       description:
-        "Designed the template and functioning of the marketplace (NFT) website that requires NFT REST-based API. It has access to meta image data, activity, pricing and ownership information at real-time.",
+        "Uniting Art and Technology. Our project encompasses a forward-thinking NFT marketplace and a real-time cryptocurrency converter. Dive into the world of unique digital assets and seamless crypto conversions with us!",
       tags: [
         {
-          skills: "html",
+          skills: "react",
           color: "pink-text-gradient",
         },
         {
-          skills: "css",
+          skills: "tailwindcss",
           color: "green-text-gradient",
         },
         {
@@ -227,14 +227,14 @@ import {
           color: "blue-text-gradient",
         },
         {
-          skills: "api",
+          skills: "opensea api",
           color: "pink-text-gradient",
         },
       ],
-      image: nft,
-      source: "https://github.com/JamesUdy/NIFTER-NFT-MARKETPLACE-WEBSITE",
-      status: "completed",
-      demo: "https://nifter-nft-marketplace.netlify.app/"
+      image: niftique,
+      source: "https://github.com/JamesUdy/Niftique",
+      status: "developing",
+      demo: "https://niftique.vercel.app/home"
     },
     {
       title: "Grab N Go",

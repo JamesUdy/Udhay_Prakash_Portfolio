@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 
 const Social = () => {
   return (
-    <section className="absolute lg:top-[19.2rem] top-44 sm:top-28 left-6 flex flex-col space-y-4 px-2 py-4 rounded-full ring-2 bg-[#0006] ring-[#ffffff3e] backdrop-filter backdrop-blur-sm">
+    <section className="absolute left-0 right-0 mx-auto top-[90%] flex flex-row justify-around px-1 py-3 w-72 rounded-full ring-2 bg-[#1e1c1c66] hover:bg-[#302f2f66] ring-[#4c4c4c3e] hover:ring-[#0d858e3e] ease-in duration-200 backdrop-filter backdrop-blur-sm">
         {socialMediaLinks.map((link) => {
             return (
                 <Link to={link.url} key={link.id} target="_blank" rel="noopener noreferrer">
-                    <img src={link.icon} alt={link.siteName} className="w-6 h-6" />
+                    <span className='rounded-full'>
+                      {<link.icon />}
+                    </span>
                 </Link>
             )
         })}        

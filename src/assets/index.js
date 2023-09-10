@@ -43,10 +43,10 @@ import vscode from "./icons/vscode.svg";
 import vercel from "./icons/vercel.svg";
 import netlify from "./icons/netlify.svg";
 
-import linkedIn from "./icons/linkedIn.svg";
-import githubLogo from "./icons/githubIcon.svg";
-import whatsapp from "./icons/whatsapp.svg";
-import mailIcon from "./icons/mail.svg";
+import linkedIn from "./icons/linkedIn.jsx";
+import githubLogo from "./icons/githubIcon.jsx";
+import whatsapp from "./icons/whatsapp.jsx";
+import mailIcon from "./icons/mail.jsx";
 
 
 export {
@@ -92,6 +92,7 @@ export {
   vscode,
   vercel,
   netlify,
+  
   linkedIn,
   whatsapp,
   githubLogo,

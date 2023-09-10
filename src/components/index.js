@@ -9,12 +9,13 @@ import Contact from "./Contact";
 
 
 export {
-  Hero,
-  Navbar,
   About,
   Skills,
   Timeline,
   Projects,
   Contact,
-  StarsCanvas
+  
+  Hero,
+  Navbar,
+  StarsCanvas,
 };

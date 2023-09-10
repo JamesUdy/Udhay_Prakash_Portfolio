@@ -24,13 +24,12 @@
   background: -webkit-linear-gradient(
     to right,
     #000000,
-    #000000
+    #000000,
   ); 
   background: linear-gradient(
     to right,
     #555555b3,
-    #000000
-    
+    #000000,    
   ); 
 }
 

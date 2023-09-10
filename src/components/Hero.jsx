@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import styled from "styled-components";
 
-import Social from "./Social";
+import SocialMediaSection from "./SocialMediaSection";
 
 import './hero.css';
 import "../index.css";
@@ -73,7 +73,7 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            <Social />
+            <SocialMediaSection />
         </section>        
     )
 };

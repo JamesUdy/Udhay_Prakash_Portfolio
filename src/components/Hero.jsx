@@ -53,7 +53,6 @@ export default function Hero() {
                                         <OrbitControls enableZoom={false} />
                                         <ambientLight intensity={0.5} />
                                         <directionalLight position={[3, 2, 1]} />
-                                        {/* <Sphere args={[1, 300, 300]} scale={2.5}> */}
                                         <Sphere args={[1, 64, 64]} scale={2.5}>
                                             <MeshDistortMaterial
                                             color="#0077b6"
@@ -66,7 +65,13 @@ export default function Hero() {
                                 </Canvas>
                                 <Img src={avatar} alt="Hero Image" />
                             </div>
-                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute lg:top-80 top-44 sm:top-28 left-6 flex flex-col bg-blue-500">
+                        <span>Hi</span>
+                        <span>Hi</span>
+                        <span>Hi</span>
+                        <span>Hi</span>
                     </div>
         </section>        
     )

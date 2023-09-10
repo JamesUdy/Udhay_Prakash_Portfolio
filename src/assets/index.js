@@ -43,6 +43,12 @@ import vscode from "./icons/vscode.svg";
 import vercel from "./icons/vercel.svg";
 import netlify from "./icons/netlify.svg";
 
+import linkedIn from "./icons/linkedIn.svg";
+import githubLogo from "./icons/githubIcon.svg";
+import whatsapp from "./icons/whatsapp.svg";
+import mailIcon from "./icons/mail.svg";
+
+
 export {
   logo,
   avatar,
@@ -86,4 +92,8 @@ export {
   vscode,
   vercel,
   netlify,
+  linkedIn,
+  whatsapp,
+  githubLogo,
+  mailIcon,
 };

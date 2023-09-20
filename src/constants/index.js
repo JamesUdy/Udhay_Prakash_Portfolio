@@ -4,6 +4,7 @@ import {
     creator,
     web,
     predictor,
+    cityscapeForecast,
     niftique,
     netzon5,
     grabNgo,
@@ -210,6 +211,33 @@ import {
       demo: "https://www.legacycode.com/"
     },
     {
+      title: "Cityscape Forecast | Urban Weather Unveiled",
+      description:
+        "Navigating the Weather of Urban Life. Discover your city's ever-changing atmospheric canvas with accurate forecasts and climate insights. Get in tune with your urban surroundings, and stay one step ahead of the elements with CityscapeForecast.",
+      tags: [
+        {
+          skills: "next js",
+          color: "pink-text-gradient",
+        },
+        {
+          skills: "tailwindcss",
+          color: "green-text-gradient",
+        },
+        {
+          skills: "typescript",
+          color: "blue-text-gradient",
+        },
+        {
+          skills: "weather api",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: cityscapeForecast,
+      source: "https://github.com/JamesUdy/Cityscape_Forecast",
+      status: "completed",
+      demo: "https://cityscape-forecast.vercel.app/",
+    },
+    {
       title: "NIFTIQUE - NFT MARKETPLACE & CRYPTO CONVERTER DEVELOPMENT",
       description:
         "Uniting Art and Technology. Our project encompasses a forward-thinking NFT marketplace and a real-time cryptocurrency converter. Dive into the world of unique digital assets and seamless crypto conversions with us!",
@@ -234,7 +262,7 @@ import {
       image: niftique,
       source: "https://github.com/JamesUdy/Niftique",
       status: "developing",
-      demo: "https://niftique.vercel.app/home"
+      demo: "https://niftique.vercel.app/home",
     },
     {
       title: "Grab N Go",
@@ -261,7 +289,7 @@ import {
       image: grabNgo,
       source: "https://github.com/JamesUdy/Grab_N_Go",
       status: "completed",
-      demo: "https://grab-n-go.netlify.app/"
+      demo: "https://grab-n-go.netlify.app/",
     },
     {
       title: "Budget Buddy",
@@ -288,7 +316,7 @@ import {
       image: budgetBuddy,
       source: "https://github.com/JamesUdy/Budget-Buddy",
       status: "completed",
-      demo: "https://budget-buddy15.vercel.app/"
+      demo: "https://budget-buddy15.vercel.app/",
     },
     {
       title: "Netzon5-Online OTT Streaming Platform",
@@ -367,7 +395,7 @@ import {
       image: laBelle,
       source: "https://github.com/JamesUdy/La-Belle-Assiette",
       status: "completed",
-      demo: "https://la-belle-assiette.netlify.app/"
+      demo: "https://la-belle-assiette.netlify.app/",
     },
     {
       title: "Charging Strategy Of Lithium Ion Battery",

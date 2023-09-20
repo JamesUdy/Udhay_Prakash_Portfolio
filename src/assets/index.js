@@ -12,6 +12,7 @@ import menu from "./icons/menu.svg";
 import close from "./icons/close.svg"; 
 
 import predictor from "./images/real-estate-predictor.avif";
+import cityscapeForecast from "./images/cityscapeForecast.avif";
 import niftique from "./images/niftique.avif";
 import laBelle from "./images/la-belle-assiette.avif";
 import netzon5 from "./images/netzon5.avif";
@@ -63,6 +64,7 @@ export {
   menu,
   close,
   predictor,
+  cityscapeForecast,
   niftique,
   netzon5,
   grabNgo,

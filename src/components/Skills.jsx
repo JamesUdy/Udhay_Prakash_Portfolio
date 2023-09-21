@@ -3,7 +3,6 @@ import Marquee from "react-fast-marquee"
 import { Wrapper } from "../hoc"
 import { skillset } from "../constants"
 import './skills.css'
-import { styles } from "../styles";
 import { Resume } from "../assets/resume"
 
 const Skills = () => {

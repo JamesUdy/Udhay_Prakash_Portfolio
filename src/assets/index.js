@@ -43,6 +43,7 @@ import postman from "./icons/postman.svg";
 import vscode from "./icons/vscode.svg";
 import vercel from "./icons/vercel.svg";
 import netlify from "./icons/netlify.svg";
+import api from "./icons/api.svg";
 
 import linkedIn from "./icons/linkedIn.jsx";
 import githubLogo from "./icons/githubIcon.jsx";
@@ -94,6 +95,7 @@ export {
   vscode,
   vercel,
   netlify,
+  api,
   
   linkedIn,
   whatsapp,

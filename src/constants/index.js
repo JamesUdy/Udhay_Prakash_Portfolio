@@ -34,6 +34,7 @@ import {
     vscode,
     vercel,
     netlify,
+    api,
   } from "../assets";
   
   export const navLinks = [
@@ -118,6 +119,10 @@ import {
     {
       name: "Markdown",
       image: markdown,
+    },
+    {
+      name: "API",
+      image: api,
     },
     {
       name: "Figma",

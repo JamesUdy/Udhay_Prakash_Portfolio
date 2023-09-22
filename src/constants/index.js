@@ -35,6 +35,7 @@ import {
     vercel,
     netlify,
     api,
+    electron,
   } from "../assets";
   
   export const navLinks = [
@@ -103,6 +104,10 @@ import {
     {
       name: "Node JS",
       image: node,
+    },
+    {
+      name: "Electron Js",
+      image: electron,
     },
     {
       name: "MongoDB",

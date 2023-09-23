@@ -36,6 +36,7 @@ import {
     netlify,
     api,
     electron,
+    webstorm,
   } from "../assets";
   
   export const navLinks = [
@@ -86,12 +87,12 @@ import {
       image: javascript,
     },
     {
-      name: "TypeScript",
-      image: typescript,
-    },
-    {
       name: "React JS",
       image: reactIcon,
+    },
+    {
+      name: "TypeScript",
+      image: typescript,
     },
     {
       name: "Bootstrap CSS",
@@ -100,6 +101,30 @@ import {
     {
       name: "Tailwind CSS",
       image: tailwind,
+    },
+    {
+      name: "Next JS",
+      image: next,
+    },
+    {
+      name: "GitHub",
+      image: githubIcon,
+    },
+    {
+      name: "Figma",
+      image: figma,
+    },
+    {
+      name: "VSCode",
+      image: vscode,
+    },
+    {
+      name: "API",
+      image: api,
+    },
+    {
+      name: "Firebase",
+      image: firebase,
     },
     {
       name: "Node JS",
@@ -112,26 +137,6 @@ import {
     {
       name: "MongoDB",
       image: mongodb,
-    },
-    {
-      name: "Next JS",
-      image: next,
-    },
-    {
-      name: "GitHub",
-      image: githubIcon,
-    },
-    {
-      name: "Markdown",
-      image: markdown,
-    },
-    {
-      name: "API",
-      image: api,
-    },
-    {
-      name: "Figma",
-      image: figma,
     },
     {
       name: "Java",
@@ -154,20 +159,16 @@ import {
       image: tableau,
     },
     {
-      name: "Firebase",
-      image: firebase,
-    },
-    {
-      name: "VSCode",
-      image: vscode,
-    },
-    {
       name: "Vercel",
       image: vercel,
     },
     {
       name: "Netlify",
       image: netlify,
+    },
+    {
+      name: "Webstorm",
+      image: webstorm,
     },
   ];
   

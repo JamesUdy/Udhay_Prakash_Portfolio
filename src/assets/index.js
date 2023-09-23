@@ -45,6 +45,7 @@ import vercel from "./icons/vercel.svg";
 import netlify from "./icons/netlify.svg";
 import api from "./icons/api.svg";
 import electron from "./icons/electron.svg";
+import webstorm from "./icons/webstorm.svg";
 
 import linkedIn from "./icons/linkedIn.jsx";
 import githubLogo from "./icons/githubIcon.jsx";
@@ -98,6 +99,7 @@ export {
   netlify,
   api,
   electron,
+  webstorm,
   
   linkedIn,
   whatsapp,

@@ -13,6 +13,30 @@
   color-scheme: dark;
 }
 
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar
+{
+	width: 0.64rem;
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #05759a;
+	background-image: -webkit-linear-gradient(90deg,
+											  transparent,
+											  #5bd9f3,
+											  transparent,
+											  transparent)
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

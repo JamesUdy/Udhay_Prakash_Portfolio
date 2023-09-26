@@ -46,6 +46,7 @@ import netlify from "./icons/netlify.svg";
 import api from "./icons/api.svg";
 import electron from "./icons/electron.svg";
 import webstorm from "./icons/webstorm.svg";
+import redux from "./icons/redux.svg";
 
 import linkedIn from "./icons/linkedIn.jsx";
 import githubLogo from "./icons/githubIcon.jsx";
@@ -100,6 +101,7 @@ export {
   api,
   electron,
   webstorm,
+  redux,
   
   linkedIn,
   whatsapp,

@@ -12,6 +12,7 @@ import {
     laBelle,
     chargingStrategy,
     legacyCodeHQ,
+    
     markdown,
     figma,
     githubIcon,
@@ -37,6 +38,7 @@ import {
     api,
     electron,
     webstorm,
+    redux,
   } from "../assets";
   
   export const navLinks = [
@@ -76,101 +78,109 @@ import {
   const skillset = [
     {
       name: "HTML 5",
-      image: html5,
+      icon: html5,
     },
     {
       name: "CSS 3",
-      image: css,
+      icon: css,
     },
     {
       name: "JavaScript",
-      image: javascript,
+      icon: javascript,
     },
     {
       name: "React JS",
-      image: reactIcon,
+      icon: reactIcon,
     },
     {
       name: "TypeScript",
-      image: typescript,
+      icon: typescript,
     },
     {
       name: "Bootstrap CSS",
-      image: bootstrap,
+      icon: bootstrap,
     },
     {
       name: "Tailwind CSS",
-      image: tailwind,
+      icon: tailwind,
     },
     {
       name: "Next JS",
-      image: next,
+      icon: next,
     },
     {
       name: "GitHub",
-      image: githubIcon,
+      icon: githubIcon,
     },
     {
       name: "Figma",
-      image: figma,
+      icon: figma,
     },
     {
       name: "VSCode",
-      image: vscode,
+      icon: vscode,
     },
     {
       name: "API",
-      image: api,
+      icon: api,
     },
     {
       name: "Firebase",
-      image: firebase,
+      icon: firebase,
     },
     {
       name: "Node JS",
-      image: node,
+      icon: node,
     },
     {
       name: "Electron Js",
-      image: electron,
+      icon: electron,
     },
     {
       name: "MongoDB",
-      image: mongodb,
+      icon: mongodb,
     },
     {
       name: "Java",
-      image: java,
+      icon: java,
     },
     {
       name: "Python",
-      image: python,
+      icon: python,
     },
     {
       name: "Postman",
-      image: postman,
+      icon: postman,
     },
     {
       name: "Power Bi",
-      image: powerbi,
+      icon: powerbi,
     },
     {
       name: "Tableau",
-      image: tableau,
+      icon: tableau,
     },
     {
       name: "Vercel",
-      image: vercel,
+      icon: vercel,
     },
     {
       name: "Netlify",
-      image: netlify,
+      icon: netlify,
     },
     {
       name: "Webstorm",
-      image: webstorm,
+      icon: webstorm,
     },
-  ];
+    {
+      name: "Redux",
+      icon: redux,
+    },
+    {
+      name: "Markdown",
+      icon: markdown,
+    },
+];
   
   const timeline = [
     {

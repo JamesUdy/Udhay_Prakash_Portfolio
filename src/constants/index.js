@@ -418,32 +418,32 @@ import {
       status: "completed",
       demo: "https://la-belle-assiette.netlify.app/",
     },
-    {
-      title: "Charging Strategy Of Lithium Ion Battery",
-      description:
-        "With SEPIC converter as the base, worked on the implementation of the charge control algorithm. This aims at the effective charging of Lithium-Ion Battery. Improved performance while charging and reduced complexity of algorithm in regard to more than 5 diverse strategies.",
-      tags: [
-        {
-          skills: "Electrical Components and Devices",
-          color: "blue-text-gradient",
-        },
-        {
-          skills: "MATLAB",
-          color: "green-text-gradient",
-        },
-        {
-          skills: "Simulink",
-          color: "pink-text-gradient",
-        },
-        {
-          skills: "Express-PCB",
-          color: "green-text-gradient",
-        },
-      ],
-      image: chargingStrategy,
-      source: "https://github.com/JamesUdy/Charging-Strategy-Of-Lithium-Ion-Battery",
-      status: "completed",
-    },
+    // {
+    //   title: "Charging Strategy Of Lithium Ion Battery",
+    //   description:
+    //     "With SEPIC converter as the base, worked on the implementation of the charge control algorithm. This aims at the effective charging of Lithium-Ion Battery. Improved performance while charging and reduced complexity of algorithm in regard to more than 5 diverse strategies.",
+    //   tags: [
+    //     {
+    //       skills: "Electrical Components and Devices",
+    //       color: "blue-text-gradient",
+    //     },
+    //     {
+    //       skills: "MATLAB",
+    //       color: "green-text-gradient",
+    //     },
+    //     {
+    //       skills: "Simulink",
+    //       color: "pink-text-gradient",
+    //     },
+    //     {
+    //       skills: "Express-PCB",
+    //       color: "green-text-gradient",
+    //     },
+    //   ],
+    //   image: chargingStrategy,
+    //   source: "https://github.com/JamesUdy/Charging-Strategy-Of-Lithium-Ion-Battery",
+    //   status: "completed",
+    // },
   ];
   
   export { services, skillset, timeline, projects };

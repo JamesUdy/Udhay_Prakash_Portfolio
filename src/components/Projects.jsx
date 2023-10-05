@@ -4,13 +4,11 @@ import { live } from "../assets"
 import { Wrapper } from "../hoc"
 import { Tilt } from "react-tilt"
 import { projects } from "../constants"
-import {motion} from 'framer-motion'
 import {styles} from '../styles'
 import './works.css'
-import { fadeIn, textVariant } from "../utils/motion"
 
 
-const ProjectCard = (project, index) => {
+const ProjectCard = (project) => {
     const colorStatus = (status) => {
         return ( status === "completed" ? "bg-[#007f5fb7]" : "bg-[#ff005596]" )
     }
@@ -63,7 +61,7 @@ const Projects = () => {
             </div>
             <div className="mt-20 flex flex-wrap gap-7 pb-10  justify-start sm:justify-center">
                 {projects.map((project,index) => (
-                    <ProjectCard key={`project-${index}`} index={index} {...project} />
+                    <ProjectCard key={`project-${index}`} {...project} />
                 ))}
             </div>
         </>

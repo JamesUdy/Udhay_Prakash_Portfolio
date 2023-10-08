@@ -1,11 +1,11 @@
-import React from "react"
-import { Tilt } from "react-tilt"
-import {motion} from 'framer-motion'
-import { services } from "../constants"
-import {styles} from '../styles'
-import './hero.css'
-import {fadeIn, textVariant} from '../utils/motion'
-import { Wrapper } from "../hoc"
+import React from "react";
+import { Tilt } from "react-tilt";
+import {motion} from 'framer-motion';
+import { services } from "../../constants";
+import {styles} from '../../styles';
+import "./About.css";
+import {fadeIn, textVariant} from '../../utils/motion';
+import { Wrapper } from "../../hoc";
 
 const ServiceCard = ({index, title, icon}) => {
     return (
@@ -28,7 +28,7 @@ const About = () => {
     return (
         <>
             <motion.div variants={textVariant()} className="lg:mt-14">
-            <p className={`hero-text styles.sectionSubText font-bold text-lg`}>ABOUT</p>
+            <p className={`about-text styles.sectionSubText font-bold text-lg`}>ABOUT</p>
             <h2 className={styles.sectionHeadText}>Get To Know Me.</h2>
             </motion.div>
             <motion.p variants={fadeIn("","",0.1,1)} className="mt-4 text-secondary text-[17px] max-w-6xl leading-[30px]">

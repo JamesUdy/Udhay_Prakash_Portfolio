@@ -4,14 +4,14 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import styled from "styled-components";
 
-import SocialMediaSection from "./SocialMediaSection";
+import SocialMediaSection from "../SocialMediaSection";
 
-import './hero.css';
-import "../index.css";
+import './Hero.css';
+import "../../index.css";
 
-import {styles} from '../styles';
+import {styles} from '../../styles';
 
-import { avatar, bgImg, bgVid} from "../assets";
+import { avatar, bgImg, bgVid} from "../../assets";
 
 const Img = styled.img`
   object-fit: contain;

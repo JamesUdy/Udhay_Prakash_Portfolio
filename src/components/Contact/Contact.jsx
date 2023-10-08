@@ -1,9 +1,9 @@
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import emailjs from '@emailjs/browser'
-import {styles} from '../styles'
-import { Wrapper } from "../hoc"
-import { slideIn } from "../utils/motion"
+import {styles} from '../../styles'
+import { Wrapper } from "../../hoc"
+import { slideIn } from "../../utils/motion"
 import './contact.css'
 
 const Contact = () => {
@@ -36,7 +36,7 @@ const Contact = () => {
                to_email: 'udayamvad@gmail.com',
                message: form.message ,
             },
-            'maS8yYYKuZ56q3uQh'
+        '5wQj0dSc8N7OG7Vk9'
             )
             .then(() => {
                 setLoading(false);
@@ -55,8 +55,8 @@ const Contact = () => {
     }
 
     return (
-        <div className="xl:mt-10 overflow-hidden w-64 md:w-1/2">
-            <motion.div variants={slideIn('right', "tween", 0.2, 1)} className="flex-[0.75] contact-bg p-8 rounded-2xl">
+        <div className="xl:mt-10 overflow-hidden w-full flex flex-col items-center">
+            <motion.div variants={slideIn('right', "tween", 0.2, 1)} className="flex-[0.75] contact-bg p-8 rounded-2xl w-full md:w-2/3 lg:w-1/2">
             
                 <p className={styles.sectionSubText} ><span className="contact-text font-semibold text-lg">GET IN TOUCH</span> 📩</p>
                 <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -77,7 +77,7 @@ const Contact = () => {
                         <textarea rows="5" name="message" value={form.message} onChange={handleChange} placeholder="What would you like to say?" 
                         className="bg-tertiary py-3 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium" />
                     </label>
-                    <button type="submit" className="bg-tertiary py-3 px-8 outline-none w-fit text-white shodow-md shadow-primary rounded-xl">{loading ? 'Sending...' : 'Send'}</button>
+                    <button type="submit" className="bg-tertiary py-3 px-8 outline-none w-fit text-white shadow-md shadow-primary rounded-xl">{loading ? 'Sending...' : 'Send'}</button>
                 </form>
             </motion.div>
         </div>

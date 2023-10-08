@@ -5,7 +5,7 @@ import About from './About/About';
 import Skills from "./Skills";
 import Timeline from "./Timeline";
 import Projects from "./Projects";
-import Contact from "./Contact";
+import Contact from "./Contact/Contact";
 
 
 export {

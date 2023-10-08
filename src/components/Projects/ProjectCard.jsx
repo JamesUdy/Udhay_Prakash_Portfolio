@@ -11,7 +11,7 @@ const ProjectCard = (project) => {
         <Tilt options={{ max: 5, scale: 1, speed: 450, }} className="work-card-bg p-3 xs:p-5 rounded-2xl w-full xs:w-[420px] h-fit group">
             <div className="relative xs:w-full h-fit">
                 <div className="overflow-hidden rounded-2xl">
-                    <img src={project.image} alt={project.title} className="w-96 h-56 object-cover ease-in-out duration-300 rounded-2xl scale-100 group-hover:scale-125" />
+                    <img src={project.image} alt={project.title} className="w-96 md:h-56 object-cover ease-in-out duration-300 rounded-2xl scale-100 group-hover:scale-125" />
                 </div>
                 <div className="absolute inset-0 flex justify-between flex-row  m-3 card-img_hover">
                     <div className="mt-1">

@@ -1,4 +1,4 @@
-import {  linkedIn, githubLogo, mailIcon, whatsapp } from "../assets";
+import {  linkedIn, githubLogo, mailIcon, whatsapp } from "../../assets";
 
 const socialMediaLinks = [
     {

@@ -1,9 +1,9 @@
 import React from "react"
 import Marquee from "react-fast-marquee"
-import { Wrapper } from "../hoc"
-import { skillset } from "../constants"
+import { Wrapper } from "../../hoc"
+import { skillset } from "../../constants"
 import './skills.css'
-import { Resume } from "../assets/resume"
+import { Resume } from "../../assets/resume"
 
 const Skills = () => {
 

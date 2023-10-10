@@ -10,7 +10,6 @@ import {
     grabNgo,
     budgetBuddy,
     laBelle,
-    // chargingStrategy,
     legacyCodeHQ,
     
     markdown,

@@ -32,11 +32,11 @@ const Projects = () => {
             </div>
             <div className="flex justify-center">
                 {visibleProjects < projects.length ? (
-                    <button onClick={showMore} className="bg-primary text-white rounded-md px-4 py-2">
+                    <button onClick={showMore} className="border-4 bg-transparent border-[#200737d9] hover:bg-[#3c096ca0] hover:border-[#3c096ca0] hover:shadow-lg hover:shadow-violet-900 ease-in duration-200 text-gray-300 rounded-xl px-4 py-2">
                         Show More
                     </button>
                 ) : (
-                    <button onClick={showLess} className="bg-primary text-white rounded-md px-4 py-2">
+                    <button onClick={showLess} className="border-4 bg-transparent border-[#200737d9] hover:bg-[#3c096ca0] hover:border-[#3c096ca0] hover:shadow-lg hover:shadow-violet-900 ease-in duration-200 text-gray-300 rounded-xl px-4 py-2">
                         Show Less
                     </button>
                 )}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Wrapper } from "../../hoc";
 import { projects } from "../../constants";
@@ -6,6 +6,7 @@ import {styles} from '../../styles';
 import './works.css';
 
 const Projects = () => {
+    const [visibleProjects, setVisibleProjects] = useState(2);
     return (
         <>
             <>

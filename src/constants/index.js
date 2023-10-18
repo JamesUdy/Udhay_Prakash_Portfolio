@@ -206,7 +206,7 @@ import {
     {
       title: "Legacy Code HQ",
       description:
-        "Revamped using Next.js, TypeScript, and Tailwind CSS, Legacy Code HQ's site now offers immersive interface. Integration of Google Analytics, robots.txt & CookiesYes enhances engagement & data-driven content strategies. Dynamic Next.js blog boosts visibility. Aligned with Kotlin Multi-platform migration, front-end solutions create unified, user-centric digital space.",
+        "Led website development using Next.js, Tailwind CSS, and TypeScript, optimizing SEO for improved rankings. Collaborated cross-functionally to solve complex challenges and integrated Electron technology with a Kotlin and Java backend developer to enhance product functionality.",
       tags: [
         {
           skills: "next js",
@@ -233,7 +233,7 @@ import {
     {
       title: "Cityscape Forecast | Urban Weather Unveiled",
       description:
-        "Navigating the Weather of Urban Life. Discover your city's ever-changing atmospheric canvas with accurate forecasts and climate insights. Get in tune with your urban surroundings, and stay one step ahead of the elements with CityscapeForecast.",
+        "Elevated Cityscape Forecast with global weather API integration, providing multi-day forecasts and air quality data for informed urban planning and weather insights. Empower yourself to conquer urban weather challenges, stay ahead of the elements, and make informed choices in your city.",
       tags: [
         {
           skills: "next js",
@@ -260,7 +260,7 @@ import {
     {
       title: "NIFTIQUE - NFT MARKETPLACE & CRYPTO CONVERTER DEVELOPMENT",
       description:
-        "Uniting Art and Technology. Our project encompasses a forward-thinking NFT marketplace and a real-time cryptocurrency converter. Dive into the world of unique digital assets and seamless crypto conversions with us!",
+        "We merge art and tech with a secure NFT marketplace, enabling NFT creation, editing, buying, and selling. Our real-time cryptocurrency converter offers precise crypto conversions via APIs. OpenSea's integration enriches user experience with real-time NFT data.",
       tags: [
         {
           skills: "react",
@@ -287,7 +287,7 @@ import {
     {
       title: "Grab N Go",
       description:
-        "Developed a responsive Grab and Go website with Firebase integration for real-time grocery item storage. Implemented CRUD operations (Create, Read, Update, Delete) to enable users to add and delete grocery items effortlessly. Ensured data security and privacy through Firebase Authentication, allowing only authorized users to access and manage the grocery list.",
+        "Crafted a responsive Grab and Go website, seamlessly integrated with Firebase for real-time grocery item storage. Empowered users with CRUD capabilities for effortless item management. Firebase Authentication safeguards data privacy, ensuring only authorized users access and manage the grocery list.",
       tags: [
         {
           skills: "javascript",
@@ -314,7 +314,7 @@ import {
     {
       title: "Budget Buddy",
       description:
-        "Developed Budget Buddy website with voice recognition technology for automated income and expense tracking. Implemented real-time financial analysis through dynamic visual graphs to facilitate data-driven decision-making. Streamlined budget management with an intuitive interface and automated data entry for improved user experience.",
+        "Created Budget Buddy, integrating voice recognition for automated income and expense tracking. Enabled real-time financial analysis with dynamic visual graphs for data-driven decisions. Streamlined budget management via an intuitive interface and automated data entry, enhancing the user experience.",
       tags: [
         {
           skills: "react",
@@ -367,7 +367,7 @@ import {
     {
       title: "Real-Estate Price Prediction Using Linear Regression - Machine Learning",
       description:
-        "Machine learning model that merges 2 significant fields - Data Science, Web Development to estimate the prices of houses in Bangalore. Specializes in providing accurate prices",
+        "A unique machine learning model blending Data Science and Web Development effectively estimates house prices in Bangalore. It excels at precision by analyzing extensive datasets comprising over 10,000 rows, ensuring highly accurate pricing predictions.",
       tags: [
         {
           skills: "html",
@@ -395,9 +395,9 @@ import {
       status: "completed",
     },
     {
-      title: "La Belle Assiette",
+      title: "La Belle Assiette - Platform for Reserving Tables and Ordering Food",
       description:
-        "The primary target was to make ordering food and reserving tables at restaurants more user-friendly by eliminating hardships found in other interfaces.",
+        "Our website streamlines food ordering and restaurant table reservations, offering a user-friendly experience. It features multi-page navigation, allowing users to explore menus and place orders with ease, addressing common interface challenges.",
       tags: [
         {
           skills: "html",

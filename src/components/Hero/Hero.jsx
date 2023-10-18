@@ -51,7 +51,7 @@ export default function Hero() {
                 <div className=" flex  flex-col items-center lg:flex-row justify-around">
                     <div>
                         <h1 className={`${styles.heroHeadText}`}>Hi, I'm <span className="hero-text">Udhaya Prakash M</span></h1>
-                        <p className={`${styles.heroSubText} mt-2 text-white-100`}>I develop captivating user interfaces <br className="sm:block hidden" /> for exceptional web experiences.</p>
+                        <p className={`${styles.heroSubText} mt-2 text-white-100 text-justify`}>I develop captivating user interfaces <br className="sm:block hidden" /> for exceptional web experiences.</p>
                     </div>
                     <div className="relative hero-bg">
                         <Canvas>

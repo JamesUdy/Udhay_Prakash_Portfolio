@@ -8,7 +8,7 @@ const ProjectCard = (project) => {
         return ( status === "completed" ? "bg-[#007f5fb7]" : "bg-[#ff005596]" )
     }
     return (
-        <Tilt options={{ max: 5, scale: 1, speed: 450, }} className="work-card-bg p-3 xs:p-5 rounded-2xl w-full xs:w-[420px] h-fit group">
+        <Tilt options={{ max: 5, scale: 1, speed: 450, }} className="work-card-bg p-3 xs:p-5 rounded-2xl w-full xs:w-[420px] h-fit md:h-[480px] group">
             <div className="relative xs:w-full h-fit">
                 <div className="overflow-hidden rounded-2xl">
                     <img src={project.image} alt={project.title} className="w-96 md:h-56 object-cover ease-in-out duration-300 rounded-2xl scale-100 group-hover:scale-125" />

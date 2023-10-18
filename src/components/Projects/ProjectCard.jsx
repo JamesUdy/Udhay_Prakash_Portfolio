@@ -28,7 +28,7 @@ const ProjectCard = (project) => {
                 </div>
                 <div className="mt-5 hidden md:block">
                     <h3 className="text-[#c4bfbf] text-md font-semibold my-2">{project.title}</h3>
-                    <p className="text-sm font-light text-secondary">{project.description}</p>
+                    <p className="text-sm font-light text-secondary w-full text-justify">{project.description}</p>
                 </div>
                 <div className="mt-4 hidden  md:flex flex-wrap gap-2">
                     {project.tags.map((tag) => (

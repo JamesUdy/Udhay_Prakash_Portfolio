@@ -29,20 +29,32 @@ function timeIcon(id) {
         }
 }
 
-const TimelineCard = ({timeline}) => (
+const TimelineCard = ({ timeline }) => (
     <VerticalTimelineElement
-    contentStyle={{background:'linear-gradient(277deg, rgba(157,78,221,1) 0%, rgba(60,9,108,1) 35%, rgba(16,0,43,1) 100%)', color:'#fff', borderRadius:"0.96rem", boxShadow:"none"}}
-    contentArrowStyle={{borderRight:'7px solid rgba(60,9,108,1)'}}
-    date={timeline.date}
-    iconStyle={{background:"linear-gradient(277deg, rgba(157,78,221,1) 0%, rgba(60,9,108,1) 35%, rgba(16,0,43,1) 100%)", color:"#fff", boxShadow:"0 0 0 4px #2f2f2f, inset 0 2px 0 rgb(255 8 8 / 8%), 0 3px 0 4px rgb(247 0 0 / 5%)" }}
-    icon={ timeIcon(timeline.id) }
+      contentStyle={{
+        background: 'linear-gradient(277deg, rgba(157,78,221,1) 0%, rgba(60,9,108,1) 35%, rgba(16,0,43,1) 100%)',
+        color: '#fff',
+        borderRadius: '0.96rem',
+        boxShadow: '1px 6px 8px #11001c',
+      }}
+      contentArrowStyle={{ borderRight: '7px solid rgba(60,9,108,1)' }}
+      date={timeline.date}
+      iconStyle={{
+        background: 'linear-gradient(277deg, rgba(157,78,221,1) 0%, rgba(60,9,108,1) 35%, rgba(16,0,43,1) 100%)',
+        color: '#fff',
+        boxShadow: '0 0 0 4px #2f2f2f, inset 0 2px 0 rgb(255 8 8 / 8%), 0 3px 0 4px rgba(0, 0, 0, 0.2)', // Adjust the shadow color and size here
+      }}
+      icon={timeIcon(timeline.id)}
     >
-        <div>
-            <h3 className="text-[#ea4f54] text-[16px] font-medium">{timeline.title}</h3>
-            <p className="text-[#8f8c8c] text-[16px] font-semibold" style={{margin:0}}>{timeline.location}</p>
-        </div>
+      <div>
+        <h3 className="text-[#ea4f54] text-[16px] font-medium">{timeline.title}</h3>
+        <p className="text-[#8f8c8c] text-[16px] font-semibold" style={{ margin: 0 }}>
+          {timeline.location}
+        </p>
+      </div>
     </VerticalTimelineElement>
-)
+  );
+  
 
 const Timeline = () => {
     return (

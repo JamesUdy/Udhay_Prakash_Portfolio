@@ -35,7 +35,7 @@ const TimelineCard = ({ timeline }) => (
         background: 'linear-gradient(277deg, rgba(157,78,221,1) 0%, rgba(60,9,108,1) 35%, rgba(16,0,43,1) 100%)',
         color: '#fff',
         borderRadius: '0.96rem',
-        boxShadow: '1px 6px 8px #11001c',
+        boxShadow: 'none',
       }}
       contentArrowStyle={{ borderRight: '7px solid rgba(60,9,108,1)' }}
       date={timeline.date}

@@ -9,7 +9,7 @@ const ProjectCard = (project) => {
     }
     return (
         <Tilt options={{ max: 5, scale: 1, speed: 450, }} className="work-card-bg p-3 xs:p-5 rounded-2xl w-full xs:w-[420px] h-fit md:h-[496px] group">
-            <div className="relative xs:w-full h-fit">
+            <div className="relative xs:w-full h-full flex flex-col justify-between">
                 <div className="overflow-hidden rounded-2xl">
                     <img src={project.image} alt={project.title} className="w-96 md:h-56 object-cover ease-in-out duration-300 rounded-2xl scale-100 group-hover:scale-125" />
                 </div>
@@ -26,15 +26,17 @@ const ProjectCard = (project) => {
                         </div>}
                     </div>
                 </div>
-                <div className="mt-5 hidden md:block">
-                    <h3 className="text-[#c4bfbf] text-md font-semibold my-2">{project.title}</h3>
-                    <p className="text-sm font-light text-secondary w-full text-justify">{project.description}</p>
-                </div>
-                <div className="mt-4 hidden  md:flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                        <p key={tag.skills} className={`text-[12px] font-medium ${tag.color}`}>#{tag.skills}</p>
-                    ))}
-                </div>                    
+                <div className='flex flex-col justify-between'>
+                    <div className="mt-5 hidden md:block">
+                        <h3 className="text-[#c4bfbf] text-md font-semibold my-2">{project.title}</h3>
+                        <p className="text-sm font-light text-secondary w-full text-justify">{project.description}</p>
+                    </div>
+                    <div className="mt-4 hidden  md:flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                            <p key={tag.skills} className={`text-[12px] font-medium ${tag.color}`}>#{tag.skills}</p>
+                        ))}
+                    </div> 
+                </div>                   
             </div>
         </Tilt>
     );

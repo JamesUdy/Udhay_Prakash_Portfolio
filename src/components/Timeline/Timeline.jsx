@@ -42,7 +42,7 @@ const TimelineCard = ({ timeline }) => (
       iconStyle={{
         background: 'linear-gradient(277deg, rgba(157,78,221,1) 0%, rgba(60,9,108,1) 35%, rgba(16,0,43,1) 100%)',
         color: '#fff',
-        boxShadow: '0 0 0 4px #2f2f2f, inset 0 2px 0 rgb(255 8 8 / 8%), 0 3px 0 4px rgba(0, 0, 0, 0.2)', // Adjust the shadow color and size here
+        boxShadow: '0 0 0 4px #2f2f2f, inset 0 2px 0 rgb(255 8 8 / 8%), 0 3px 0 4px rgba(0, 0, 0, 0.2)', 
       }}
       icon={timeIcon(timeline.id)}
     >

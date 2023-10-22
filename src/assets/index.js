@@ -18,7 +18,6 @@ import laBelle from "./images/la-belle-assiette.avif";
 import netzon5 from "./images/netzon5.avif";
 import grabNgo from "./images/grab-n-go.avif";
 import budgetBuddy from "./images/budget-buddy.avif";
-import chargingStrategy from "./images/charging-strategy.avif";
 import legacyCodeHQ from "./images/legacy-code-hq.avif";
 
 import markdown from "./icons/markdown.svg";
@@ -74,7 +73,6 @@ export {
   grabNgo,
   budgetBuddy,
   laBelle,
-  chargingStrategy,
   legacyCodeHQ,
   markdown,
   figma,

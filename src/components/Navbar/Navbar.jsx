@@ -15,7 +15,7 @@ export default function Navbar() {
                  className="flex items-center gap-2"
                  onClick={() => {setActive("");
                 window.scrollTo(0,0)}}
-                 >
+>
                     <img src={logo} alt="logo" className="w-9 h-9 object-contain"  />
                     <p className="text-white text-[18px] font-bold cursor-pointer flex">Udhaya &nbsp;
                     <span className="sm:block hidden">| Prakash M</span></p>
@@ -35,12 +35,12 @@ export default function Navbar() {
                  <div className="sm:hidden flex flex-1 justify-end items-center">
                     <img src={toggle ? close : menu} alt="menu" className="w-28px h-28px cursor-pointer object-contain" onClick={() => setToggle(!toggle)} />
                  </div>
-                 <div className={`${!toggle ? 'hidden' : 'flex'} p-6 violet-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl` }>
-                    <ul className="list-none flex justify-center flex-col items-start gap-4">
+                 <div className={`${!toggle ? 'hidden' : 'flex'} p-6 violet-gradient backdrop-filter backdrop-blur-lg absolute top-16 right-0 w-full items-center justify-center mx-4 my-2 min-w-[140px] z-10 rounded-xl` }>
+                    <ul className="list-none flex justify-center flex-col items-center gap-4">
                         {
                             navLinks.map((link) => (
                                 <li key={link.id} className={
-                                    `${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[16px] font-popins font-semibold cursor-pointer`
+                                    `${active === link.title ? "text-white" : "text-secondary"} hover:text-white text-[16px] text-center font-popins font-semibold cursor-pointer`
                                 }
                                 onClick={() => {
                                     setToggle(!toggle);

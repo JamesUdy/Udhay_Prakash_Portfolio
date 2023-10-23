@@ -58,7 +58,7 @@ body::-webkit-scrollbar-thumb
 }
 
 .violet-gradient {
-  background: #000000;
+  background: #000000cd;
   background: -webkit-linear-gradient(
     to right,
     #08d0b5,

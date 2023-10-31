@@ -28,6 +28,7 @@ import css from "./icons/css.svg";
 import reactIcon from "./icons/react.svg";
 import tailwind from "./icons/tailwindcss.svg";
 import bootstrap from "./icons/bootstrap.svg";
+import chakraui from "./icons/chakraui.svg";
 import javascript from "./icons/javascript.svg";
 import typescript from "./icons/typescript.svg";
 import node from "./icons/node.svg";
@@ -80,6 +81,7 @@ export {
   html5,
   css,
   reactIcon,
+  chakraui,
   tailwind,
   bootstrap,
   javascript,

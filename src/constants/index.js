@@ -19,6 +19,7 @@ import {
     css,
     reactIcon,
     tailwind,
+    chakraui,
     typescript,
     javascript,
     bootstrap,
@@ -102,6 +103,10 @@ import {
     {
       name: "Tailwind CSS",
       icon: tailwind,
+    },
+    {
+      name: "Chakra UI",
+      icon: chakraui,
     },
     {
       name: "Next JS",

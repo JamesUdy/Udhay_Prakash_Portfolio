@@ -1,8 +1,4 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
     predictor,
     cityscapeForecast,
     niftique,
@@ -56,26 +52,7 @@ import {
     },
   ];
   
-  const services = [
-    {
-      title: "Front End Developer",
-      icon: web,
-    },
-    {
-      title: "React Developer",
-      icon:  backend,
-    },
-    {
-      title: "Artist",
-      icon: mobile,
-    },
-    {
-      title: "Web Designer",
-      icon: creator,
-    },
-  ];
-  
-  const skillset = [
+  const skillSet = [
     {
       name: "HTML 5",
       icon: html5,
@@ -423,5 +400,5 @@ import {
     },
   ];
   
-  export { services, skillset, timeline, projects };
+  export { skillSet, timeline, projects };
   

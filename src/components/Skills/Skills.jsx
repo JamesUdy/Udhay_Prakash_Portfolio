@@ -1,7 +1,7 @@
 import React from "react"
 import Marquee from "react-fast-marquee"
 import { Wrapper } from "../../hoc"
-import { skillset } from "../../constants"
+import { skillSet } from "../../constants"
 import './skills.css'
 import { Resume } from "../../assets/resume"
 
@@ -24,7 +24,7 @@ const Skills = () => {
            <div className="mb-6"><span className="skill-text font-bold text-lg">SKILLS AND TOOLS</span> 🚀</div>
            <div className="w-56 md:w-1/2">
                 <Marquee className="py-2" direction="right">
-                    {skillset.map(function(skill) {
+                    {skillSet.map(function(skill) {
                         return (
                             <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.icon} alt={`${skill.name} Logo`} className="w-4 h-4" />{` ${skill.name} `}</div>
                         )
@@ -32,7 +32,7 @@ const Skills = () => {
                     )}
                 </Marquee>
                 <Marquee className="py-2" delay={-2.5}>
-                    {skillset.map(function(skill) {
+                    {skillSet.map(function(skill) {
                         return (
                             <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.icon} alt={`${skill.name} Logo`} />{` ${skill.name} `}</div>
                         )
@@ -40,7 +40,7 @@ const Skills = () => {
                     )}
                 </Marquee>
                 <Marquee className="py-2" direction="right" delay={-5}>
-                    {skillset.map(function(skill) {
+                    {skillSet.map(function(skill) {
                         return (
                             <div key={skill.name} className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"><img src={skill.icon} alt={`${skill.name} Logo`} />{` ${skill.name} `}</div>
                         )

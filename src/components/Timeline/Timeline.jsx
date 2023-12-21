@@ -5,7 +5,7 @@ import { styles } from "../../styles";
 import { timeline } from "../../constants";
 import { Wrapper } from "../../hoc";
 import { textVariant } from "../../utils/motion";
-import './timeline.css'
+import './timeline.css';
 
 function timeIcon(id) {
         if(id === 1){

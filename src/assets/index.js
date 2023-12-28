@@ -19,6 +19,7 @@ import netzon5 from "./images/netzon5.avif";
 import grabNgo from "./images/grab-n-go.avif";
 import budgetBuddy from "./images/budget-buddy.avif";
 import legacyCodeHQ from "./images/legacy-code-hq.avif";
+import todoSentinel from "./images/todo-sentinel.avif";
 
 import markdown from "./icons/markdown.svg";
 import figma from "./icons/figma.svg";
@@ -75,6 +76,7 @@ export {
   budgetBuddy,
   laBelle,
   legacyCodeHQ,
+  todoSentinel,
   markdown,
   figma,
   githubIcon,

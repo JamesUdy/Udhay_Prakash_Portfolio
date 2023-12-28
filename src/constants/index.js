@@ -7,6 +7,7 @@ import {
     budgetBuddy,
     laBelle,
     legacyCodeHQ,
+    todoSentinel,
     
     markdown,
     figma,
@@ -210,6 +211,33 @@ import {
       image: legacyCodeHQ,
       status: "developing",
       demo: "https://www.legacycode.com/"
+    },
+    {
+      title: "ToDo Sentinel | Empower Your Workflow",
+      description:
+        "Transform task management with To-Do Sentinel—a powerhouse for stylish, efficient productivity. Crafted with TypeScript, Next.js, Tailwind CSS, and FireStore, it's not just a to-do list; it's a dynamic experience. Effortlessly customize tasks, set deadlines, and enjoy seamless CRUD operations.",
+      tags: [
+        {
+          skills: "next js",
+          color: "pink-text-gradient",
+        },
+        {
+          skills: "typescript",
+          color: "blue-text-gradient",
+        },
+        {
+          skills: "firebase",
+          color: "pink-text-gradient",
+        },
+        {
+          skills: "tailwind css",
+          color: "green-text-gradient",
+        },
+      ],
+      image: todoSentinel,
+      source: "https://github.com/JamesUdy/To-Do-Sentinel.git",
+      status: "developing",
+      demo: "https://to-do-sentinel.vercel.app/",
     },
     {
       title: "Cityscape Forecast | Urban Weather Unveiled",

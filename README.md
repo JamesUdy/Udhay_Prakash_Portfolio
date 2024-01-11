@@ -15,10 +15,11 @@
 
 ## Projects
 
-### Legacy Code HQ
-Elevated with the prowess of Next.js, TypeScript, and the finesse of Tailwind CSS, the revitalized Legacy Code HQ platform now unfurls an immersive interface. Intricately woven are Google Analytics, robots.txt & CookiesYes, elevating engagement & emboldening data-centric strategies. A dynamic Next.js blog channels visibility while harmonizing with Kotlin Multi-platform migration, conjuring a symphony of seamless, user-focused realms.
-- **Skills:** React, Next.js, TypeScript, Tailwind CSS
-- [Demo](https://www.legacycode.com/)
+### TODO SENTINEL - EMPOWER YOUR WORKFLOW
+Revolutionize your task management with To-Do Sentinel—your go-to platform for powerful, stylish, and efficient productivity. Built with TypeScript, Next.js, Tailwind CSS, and Firestore, it's more than a to-do list; it's a dynamic experience. Customize tasks, set deadlines, and enjoy CRUD operations with ease. 🌟🚀
+- **Skills:** React, Next.js, TypeScript, Tailwind CSS, Firestore
+- [Source Code](https://github.com/JamesUdy/To-Do-Sentinel)
+- [Demo](https://to-do-sentinel.vercel.app/)
 
 ### NIFTIQUE - NFT MARKETPLACE & CRYPTO CONVERTER DEVELOPMENT
 Uniting Art and Technology. Our project encompasses a forward-thinking NFT marketplace and a real-time cryptocurrency converter. Dive into the world of unique digital assets and seamless crypto conversions with us!

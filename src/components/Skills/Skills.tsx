@@ -1,5 +1,5 @@
-import React from 'react';
-import Marquee from 'react-fast-marquee';
+import MarqueeLib from 'react-fast-marquee';
+const Marquee = (MarqueeLib as any).default ?? MarqueeLib;
 import { Wrapper } from '../../hoc';
 import { skillSet } from '../../constants';
 import './skills.css';

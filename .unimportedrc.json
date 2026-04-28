@@ -1,9 +1,0 @@
-{
-  "ignoreUnresolved": [],
-  "ignoreUnused": [
-    "react-blink-text",
-    "react-favicon",
-    "react-simple-maps"
-  ],
-  "ignoreUnimported": []
-}

@@ -19,7 +19,9 @@ const ProjectCard = (project: Project) => (
 
       <div className="absolute inset-0 flex justify-between flex-row m-3 card-img_hover">
         <div className="mt-1">
-          <span className={`p-2 text-white ${statusColor(project.status)} rounded-lg text-[12px] font-semibold`}>
+          <span
+            className={`p-2 text-white ${statusColor(project.status)} rounded-lg text-[12px] font-semibold`}
+          >
             {project.status}
           </span>
         </div>
@@ -48,7 +50,9 @@ const ProjectCard = (project: Project) => (
       <div className="flex flex-col justify-between">
         <div className="mt-5 hidden md:block">
           <h3 className="text-[#c4bfbf] text-md font-semibold my-2">{project.title}</h3>
-          <p className="text-sm font-light text-secondary w-full text-justify">{project.description}</p>
+          <p className="text-sm font-light text-secondary w-full text-justify">
+            {project.description}
+          </p>
         </div>
         <div className="mt-4 hidden md:flex flex-wrap gap-2">
           {project.tags.map((tag) => (

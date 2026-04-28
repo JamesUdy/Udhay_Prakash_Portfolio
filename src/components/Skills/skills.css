@@ -1,15 +1,9 @@
 .skill-text {
-    background: linear-gradient(
-        to right,
-        #f72585 20%,
-        #4cc9f0 30%,
-        #fb5607 70%,
-        #3109d0 80%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    background-size: 500% auto;
-    animation: glitter 5s ease-in-out infinite alternate;
+  background: linear-gradient(to right, #f72585 20%, #4cc9f0 30%, #fb5607 70%, #3109d0 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: glitter 5s ease-in-out infinite alternate;
 }

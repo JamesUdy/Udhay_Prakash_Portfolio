@@ -45,8 +45,7 @@ export default function Hero() {
               Hi, I&apos;m <span className="hero-text">Udhaya Prakash M</span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              Software Engineer (Full Stack) —{' '}
-              <br className="sm:block hidden" />
+              Software Engineer (Full Stack) — <br className="sm:block hidden" />
               scalable systems &amp; real-time applications.
             </p>
           </div>
@@ -57,12 +56,7 @@ export default function Hero() {
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[3, 2, 1]} />
                 <Sphere args={[1, 64, 64]} scale={2.5}>
-                  <MeshDistortMaterial
-                    color="#0077b6"
-                    attach="material"
-                    distort={0.5}
-                    speed={2}
-                  />
+                  <MeshDistortMaterial color="#0077b6" attach="material" distort={0.5} speed={2} />
                 </Sphere>
               </Suspense>
             </Canvas>

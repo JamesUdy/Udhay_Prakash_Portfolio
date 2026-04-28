@@ -22,6 +22,6 @@
       "@/types": ["src/types/index.ts"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/types/index.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

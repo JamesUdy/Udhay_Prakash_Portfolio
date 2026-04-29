@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './About.css';
@@ -13,16 +13,44 @@ const stagger = {
   show:   { transition: { staggerChildren: 0.12 } },
 };
 
-const stats = [
-  { value: '2+',   label: 'Years Experience' },
-  { value: '150K', label: 'MAU Scaled To' },
-  { value: '75%',  label: 'Pipeline Speedup' },
-  { value: '9',    label: 'Projects Shipped' },
+// numeric target, suffix shown after count, display label
+const stats: { end: number; suffix: string; label: string }[] = [
+  { end: 2,   suffix: '+',  label: 'Years Experience'   },
+  { end: 150, suffix: 'K',  label: 'MAU Scaled To'      },
+  { end: 75,  suffix: '%',  label: 'Pipeline Speedup'   },
+  { end: 60,  suffix: '%',  label: 'Sync Errors Reduced'},
 ];
 
+function CountUp({ end, suffix, active }: { end: number; suffix: string; active: boolean }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!active) return;
+    let start = 0;
+    const duration = 1400;
+    const step = 16;
+    const steps = duration / step;
+    const increment = end / steps;
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, step);
+    return () => clearInterval(timer);
+  }, [active, end]);
+
+  return <>{count}{suffix}</>;
+}
+
 export default function About() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const ref     = useRef<HTMLDivElement>(null);
+  const inView  = useInView(ref, { once: true, margin: '-80px' });
+  const statsRef = useRef<HTMLDivElement>(null);
+  const statsInView = useInView(statsRef, { once: true, margin: '-40px' });
 
   return (
     <section className="about-root" ref={ref}>
@@ -83,6 +111,7 @@ export default function About() {
 
       {/* ── Stats strip ── */}
       <motion.div
+        ref={statsRef}
         className="about-stats"
         variants={stagger}
         initial="hidden"
@@ -90,7 +119,9 @@ export default function About() {
       >
         {stats.map((s) => (
           <motion.div key={s.label} variants={fadeUp} className="about-stat">
-            <span className="about-stat-value">{s.value}</span>
+            <span className="about-stat-value">
+              <CountUp end={s.end} suffix={s.suffix} active={statsInView} />
+            </span>
             <span className="about-stat-label">{s.label}</span>
           </motion.div>
         ))}

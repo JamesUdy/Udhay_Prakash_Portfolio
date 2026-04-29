@@ -103,7 +103,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <div className="relative min-h-screen bg-[var(--color-bg)]">
+        <div className="relative min-h-screen bg-[var(--color-bg)] pb-32">
           {!bulbDone && <BulbLoader onComplete={() => setBulbDone(true)} />}
           {bulbDone && (
             <>

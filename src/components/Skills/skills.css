@@ -97,6 +97,13 @@
   width: 36px;
   height: 36px;
   object-fit: contain;
+  /* Dark mode: icons are black paths → invert to white */
+  filter: invert(1);
+  transition: filter 0.18s ease;
+}
+
+:root[data-theme='light'] .skill-card-icon {
+  filter: none;
 }
 
 .skill-card-label {
@@ -130,4 +137,9 @@
   width: 18px;
   height: 18px;
   object-fit: contain;
+  filter: invert(1);
+}
+
+:root[data-theme='light'] .skills-marquee-icon {
+  filter: none;
 }

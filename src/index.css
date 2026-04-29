@@ -4,13 +4,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* #region Theme tokens */
+
+:root[data-theme='dark'] {
+  --color-bg:         #050816;
+  --color-surface:    #151030;
+  --color-surface-2:  #100d25;
+  --color-border:     #1e1a3a;
+  --color-text:       #ffffff;
+  --color-text-muted: #aaa6c3;
+  --color-accent:     #915eff;
+  --color-glow:       #804dee;
+  --color-glow-rgb:   128, 77, 238;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --color-bg:         #f8f7ff;
+  --color-surface:    #ede9fe;
+  --color-surface-2:  #e2ddf9;
+  --color-border:     #d4cef7;
+  --color-text:       #0f0a1e;
+  --color-text-muted: #4b4068;
+  --color-accent:     #7c3aed;
+  --color-glow:       #6d28d9;
+  --color-glow-rgb:   109, 40, 217;
+  color-scheme: light;
+}
+
+/* #endregion */
+
+/* #region Base */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body::-webkit-scrollbar-track {
@@ -35,6 +66,10 @@ body::-webkit-scrollbar-thumb {
   padding-bottom: 100px;
   display: block;
 }
+
+/* #endregion */
+
+/* #region Legacy gradient utilities */
 
 .black-gradient {
   background: #000000;
@@ -81,6 +116,10 @@ body::-webkit-scrollbar-thumb {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* #endregion */
+
+/* #region Canvas loader */
 
 .canvas-loader {
   font-size: 10px;
@@ -184,3 +223,5 @@ body::-webkit-scrollbar-thumb {
       -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+/* #endregion */

@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -38,6 +39,54 @@ const fadeUp = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' as const } },
 };
 
+const charVariant = {
+  hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
+  show:   { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.45, ease: 'easeOut' as const } },
+};
+
+const typewriterSubtitles = [
+  'Building scalable full-stack experiences.',
+  'Turning ideas into production-ready code.',
+  'React • Node.js • Cloud • TypeScript.',
+];
+
+function TypewriterText({ texts }: { texts: string[] }) {
+  const [textIdx, setTextIdx] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [phase, setPhase] = useState<'typing' | 'pause' | 'erasing'>('typing');
+
+  useEffect(() => {
+    const current = texts[textIdx];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === 'typing') {
+      if (displayed.length < current.length) {
+        timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 45);
+      } else {
+        timeout = setTimeout(() => setPhase('pause'), 1800);
+      }
+    } else if (phase === 'pause') {
+      timeout = setTimeout(() => setPhase('erasing'), 400);
+    } else {
+      if (displayed.length > 0) {
+        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 28);
+      } else {
+        setTextIdx((i) => (i + 1) % texts.length);
+        setPhase('typing');
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayed, phase, textIdx, texts]);
+
+  return (
+    <span className="hero-typewriter">
+      {displayed}
+      <span className="hero-typewriter-cursor" aria-hidden="true">|</span>
+    </span>
+  );
+}
+
 const marqueeSkills = [
   'React', 'TypeScript', 'Node.js', 'MongoDB', 'Next.js',
   'Python', 'Firebase', 'Redux', 'Tailwind CSS', 'REST APIs',
@@ -68,11 +117,21 @@ export default function Hero() {
   const { theme } = useTheme();
   const sphereColor = theme === 'light' ? '#ab7cff' : '#6d28d9';
   const [langIdx, setLangIdx] = useState(0);
+  const [nameRevealed, setNameRevealed] = useState(false);
 
   useEffect(() => {
+    // delay cycling until after the initial letter-by-letter reveal (~1.2s)
+    const reveal = setTimeout(() => setNameRevealed(true), 1200);
+    return () => clearTimeout(reveal);
+  }, []);
+
+  useEffect(() => {
+    if (!nameRevealed) return;
     const id = setInterval(() => setLangIdx((i) => (i + 1) % nameVariants.length), 2600);
     return () => clearInterval(id);
-  }, []);
+  }, [nameRevealed]);
+
+  const englishChars = nameVariants[0].text.split('');
 
   return (
     <section className="hero-root">
@@ -99,20 +158,47 @@ export default function Hero() {
           <motion.div variants={fadeUp} className="hero-lang-wrap">
             <p className="hero-lang-hi">Hi, I&apos;m</p>
             <div className="hero-lang-name-box">
-              <AnimatePresence mode="wait">
+              {!nameRevealed ? (
+                /* letter-by-letter reveal on first load */
                 <motion.span
-                  key={langIdx}
                   className="hero-lang-name"
-                  variants={langFade}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
+                  variants={{ hidden: {}, show: { transition: { staggerChildren: 0.055 } } }}
+                  initial="hidden"
+                  animate="show"
                 >
-                  {nameVariants[langIdx].text}
+                  {englishChars.map((ch, i) => (
+                    <motion.span key={i} variants={charVariant} style={{ display: 'inline-block' }}>
+                      {ch === ' ' ? ' ' : ch}
+                    </motion.span>
+                  ))}
                 </motion.span>
-              </AnimatePresence>
+              ) : (
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={langIdx}
+                    className="hero-lang-name"
+                    variants={langFade}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  >
+                    {nameVariants[langIdx].text}
+                  </motion.span>
+                </AnimatePresence>
+              )}
             </div>
             <span className="hero-lang-badge">{nameVariants[langIdx].lang}</span>
+          </motion.div>
+
+          {/* typewriter subtitle */}
+          <motion.div variants={fadeUp} className="hero-subtitle">
+            <TypewriterText texts={typewriterSubtitles} />
+          </motion.div>
+
+          {/* CTA buttons */}
+          <motion.div variants={fadeUp} className="hero-ctas">
+            <Link to="/projects" className="hero-cta hero-cta--primary">View Work</Link>
+            <Link to="/contact"  className="hero-cta hero-cta--secondary">Contact Me</Link>
           </motion.div>
         </motion.div>
 
@@ -186,6 +272,18 @@ export default function Hero() {
           ))}
         </div>
       </div>
+
+      {/* Scroll-down caret */}
+      <motion.div
+        className="hero-scroll-caret"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden="true"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </motion.div>
     </section>
   );
 }

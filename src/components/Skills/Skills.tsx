@@ -1,79 +1,96 @@
+import { useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import MarqueeLib from 'react-fast-marquee';
 const Marquee = (MarqueeLib as any).default ?? MarqueeLib;
-import { Wrapper } from '../../hoc';
 import { skillSet } from '../../constants';
 import './skills.css';
-import { Resume } from '../../assets/resume';
 
-const Skills = () => {
-  const onButtonClick = () => {
-    fetch(Resume).then((response) => {
-      response.blob().then((url) => {
-        const fileURL = window.URL.createObjectURL(url);
-        let alink = document.createElement('a');
-        alink.href = fileURL;
-        alink.download = Resume;
-        alink.click();
-      });
-    });
-  };
-
-  return (
-    <div className="flex flex-col items-center">
-      <div className="mb-6">
-        <span className="skill-text font-bold text-lg">SKILLS AND TOOLS</span> 🚀
-      </div>
-      <div className="w-56 md:w-1/2">
-        <Marquee className="py-2" direction="right">
-          {skillSet.map(function (skill) {
-            return (
-              <div
-                key={skill.name}
-                className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"
-              >
-                <img src={skill.icon} alt={`${skill.name} Logo`} className="w-4 h-4" />
-                {` ${skill.name} `}
-              </div>
-            );
-          })}
-        </Marquee>
-        <Marquee className="py-2" delay={-2.5}>
-          {skillSet.map(function (skill) {
-            return (
-              <div
-                key={skill.name}
-                className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"
-              >
-                <img src={skill.icon} alt={`${skill.name} Logo`} />
-                {` ${skill.name} `}
-              </div>
-            );
-          })}
-        </Marquee>
-        <Marquee className="py-2" direction="right" delay={-5}>
-          {skillSet.map(function (skill) {
-            return (
-              <div
-                key={skill.name}
-                className="p-2 border-2 mx-2 rounded-lg border-[#7209b7] flex items-center gap-2"
-              >
-                <img src={skill.icon} alt={`${skill.name} Logo`} />
-                {` ${skill.name} `}
-              </div>
-            );
-          })}
-        </Marquee>
-      </div>
-      <div className="my-10">
-        <button
-          onClick={onButtonClick}
-          className="border-4 bg-transparent border-[#200737d9] shadow-lg shadow-[#200737d9] hover:shadow-xl hover:shadow-[#200737d9] ease-in duration-200 text-gray-300 rounded-xl px-4 py-2"
-        >
-          <span className="font-light text-md md:text-lg cursor-pointer">Download Resume</span> 👇🏼
-        </button>
-      </div>
-    </div>
-  );
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
-export default Wrapper(Skills, '');
+const cardStagger = {
+  hidden: {},
+  show:   { transition: { staggerChildren: 0.06 } },
+};
+
+type Category = 'All' | 'Frontend' | 'Backend' | 'Tools';
+
+const categoryMap: Record<Exclude<Category, 'All'>, string[]> = {
+  Frontend: ['React JS', 'Next JS', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux', 'HTML 5', 'CSS 3'],
+  Backend:  ['Node JS', 'Firebase', 'MongoDB', 'Python'],
+  Tools:    ['GitHub', 'Figma', 'VSCode', 'Postman', 'Vercel', 'Netlify', 'Markdown'],
+};
+
+const tabs: Category[] = ['All', 'Frontend', 'Backend', 'Tools'];
+
+export default function Skills() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+  const [active, setActive] = useState<Category>('All');
+
+  const visible = active === 'All'
+    ? skillSet
+    : skillSet.filter((s) => categoryMap[active]?.includes(s.name));
+
+  return (
+    <section className="skills-root" ref={ref}>
+      {/* ── Header ── */}
+      <motion.div
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
+        initial="hidden"
+        animate={inView ? 'show' : 'hidden'}
+      >
+        <motion.p variants={fadeUp} className="skills-eyebrow">SKILLS &amp; TOOLS</motion.p>
+        <motion.h2 variants={fadeUp} className="skills-heading">What I Work With.</motion.h2>
+      </motion.div>
+
+      {/* ── Category filter tabs ── */}
+      <motion.div
+        className="skills-tabs"
+        variants={fadeUp}
+        initial="hidden"
+        animate={inView ? 'show' : 'hidden'}
+      >
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`skills-tab${active === tab ? ' skills-tab--active' : ''}`}
+            onClick={() => setActive(tab)}
+          >
+            {tab}
+          </button>
+        ))}
+      </motion.div>
+
+      {/* ── Skill cards ── */}
+      <motion.div
+        key={active}
+        className="skills-grid"
+        variants={cardStagger}
+        initial="hidden"
+        animate="show"
+      >
+        {visible.map((skill) => (
+          <motion.div key={skill.name} variants={fadeUp} className="skill-card">
+            <img src={skill.icon} alt={skill.name} className="skill-card-icon" />
+            <span className="skill-card-label">{skill.name}</span>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* ── Marquee strip ── */}
+      <div className="skills-marquee-wrap">
+        <Marquee gradient={false} speed={38} pauseOnHover>
+          {skillSet.map((s) => (
+            <div key={s.name} className="skills-marquee-item">
+              <img src={s.icon} alt={s.name} className="skills-marquee-icon" />
+              <span>{s.name}</span>
+            </div>
+          ))}
+        </Marquee>
+      </div>
+    </section>
+  );
+}

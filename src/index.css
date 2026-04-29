@@ -69,6 +69,15 @@ body::-webkit-scrollbar-thumb {
 
 /* #endregion */
 
+/* #region Page transition — cursor blink */
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* #endregion */
+
 /* #region Legacy gradient utilities */
 
 .black-gradient {
@@ -115,6 +124,92 @@ body::-webkit-scrollbar-thumb {
   background: linear-gradient(to top, #ec008c, #fc6767);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* #endregion */
+
+/* #region Theme toggle — ink bleed + sparks */
+
+/*
+  Ink bleed overlay
+  Radial gradient mask expands from the click origin using a CSS animation
+  driven by custom properties set from JS.
+*/
+.ink-bleed {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+
+  --bleed-x: 50vw;
+  --bleed-y: 50vh;
+  --bleed-burst: #e8e0ff;
+  --bleed-edge: #f8f7ff;
+  --bleed-max-r: 200vmax;
+
+  background: radial-gradient(
+    circle at var(--bleed-x) var(--bleed-y),
+    var(--bleed-burst) 0%,
+    var(--bleed-edge) 70%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    circle var(--bleed-r, 0px) at var(--bleed-x) var(--bleed-y),
+    black 100%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle var(--bleed-r, 0px) at var(--bleed-x) var(--bleed-y),
+    black 100%,
+    transparent 100%
+  );
+
+  opacity: 0;
+}
+
+.ink-bleed--active {
+  animation: inkBleedExpand 0.72s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes inkBleedExpand {
+  0%   {
+    opacity: 1;
+    -webkit-mask-image: radial-gradient(circle 0px at var(--bleed-x) var(--bleed-y), black 100%, transparent 100%);
+    mask-image:         radial-gradient(circle 0px at var(--bleed-x) var(--bleed-y), black 100%, transparent 100%);
+  }
+  55%  {
+    opacity: 1;
+    -webkit-mask-image: radial-gradient(circle var(--bleed-max-r) at var(--bleed-x) var(--bleed-y), black 100%, transparent 100%);
+    mask-image:         radial-gradient(circle var(--bleed-max-r) at var(--bleed-x) var(--bleed-y), black 100%, transparent 100%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-mask-image: radial-gradient(circle var(--bleed-max-r) at var(--bleed-x) var(--bleed-y), black 100%, transparent 100%);
+    mask-image:         radial-gradient(circle var(--bleed-max-r) at var(--bleed-x) var(--bleed-y), black 100%, transparent 100%);
+  }
+}
+
+/*
+  Lightning sparks
+  Each .spark shoots outward from the button origin.
+*/
+.spark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--spark-len, 20px);
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(to right, var(--spark-color, #c4b5fd), transparent);
+  transform-origin: 0 50%;
+  transform: rotate(var(--spark-angle, 0deg)) scaleX(0);
+  animation: sparkShoot 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes sparkShoot {
+  0%   { transform: rotate(var(--spark-angle)) scaleX(0);          opacity: 1; }
+  45%  { transform: rotate(var(--spark-angle)) scaleX(1);          opacity: 1; }
+  100% { transform: rotate(var(--spark-angle)) scaleX(1.1) translateX(6px); opacity: 0; }
 }
 
 /* #endregion */

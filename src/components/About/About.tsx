@@ -61,8 +61,8 @@ export default function About() {
         initial="hidden"
         animate={inView ? 'show' : 'hidden'}
       >
-        <motion.p variants={fadeUp} className="about-eyebrow">ABOUT ME</motion.p>
-        <motion.h2 variants={fadeUp} className="about-heading">Get To Know Me.</motion.h2>
+        <motion.p variants={fadeUp} className="about-eyebrow">INTRODUCTION</motion.p>
+        <motion.h2 variants={fadeUp} className="about-heading">Who I Am.</motion.h2>
       </motion.div>
 
       {/* ── Split layout: bio | abstract shape ── */}

@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
+import BottomNav from './components/Navbar/BottomNav';
 
 const Hero = lazy(() => import('./pages/Hero'));
 const About = lazy(() => import('./pages/About'));
@@ -54,6 +55,7 @@ export default function App() {
       <BrowserRouter>
         <div className="relative min-h-screen bg-[var(--color-bg)]">
           <AnimatedRoutes />
+          <BottomNav />
         </div>
       </BrowserRouter>
     </ThemeProvider>

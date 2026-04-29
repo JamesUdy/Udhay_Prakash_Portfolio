@@ -15,15 +15,16 @@ const cardStagger = {
   show:   { transition: { staggerChildren: 0.06 } },
 };
 
-type Category = 'All' | 'Frontend' | 'Backend' | 'Tools';
+type Category = 'All' | 'Frontend' | 'Backend' | 'Cloud' | 'Tools';
 
 const categoryMap: Record<Exclude<Category, 'All'>, string[]> = {
-  Frontend: ['React JS', 'Next JS', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux', 'HTML 5', 'CSS 3'],
-  Backend:  ['Node JS', 'Firebase', 'MongoDB', 'Python'],
+  Frontend: ['React JS', 'Next JS', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux', 'Flutter', 'Dart', 'Shadcn', 'HTML 5', 'CSS 3'],
+  Backend:  ['Node JS', 'Express.js', 'Python', 'Firebase'],
+  Cloud:    ['MongoDB', 'Redis', 'AWS', 'GCP', 'Docker'],
   Tools:    ['GitHub', 'Figma', 'VSCode', 'Postman', 'Vercel', 'Netlify', 'Markdown'],
 };
 
-const tabs: Category[] = ['All', 'Frontend', 'Backend', 'Tools'];
+const tabs: Category[] = ['All', 'Frontend', 'Backend', 'Cloud', 'Tools'];
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null);

@@ -27,6 +27,14 @@ import {
   vercel,
   netlify,
   redux,
+  express,
+  flutter,
+  dart,
+  redis,
+  aws,
+  gcp,
+  docker,
+  shadcn,
 } from '../assets';
 
 export const navLinks: NavLink[] = [
@@ -36,25 +44,37 @@ export const navLinks: NavLink[] = [
 ];
 
 export const skillSet: SkillItem[] = [
-  { name: 'React JS', icon: reactIcon },
-  { name: 'Next JS', icon: next },
-  { name: 'TypeScript', icon: typescript },
-  { name: 'JavaScript', icon: javascript },
+  // Frontend
+  { name: 'React JS',     icon: reactIcon },
+  { name: 'Next JS',      icon: next },
+  { name: 'TypeScript',   icon: typescript },
+  { name: 'JavaScript',   icon: javascript },
   { name: 'Tailwind CSS', icon: tailwind },
-  { name: 'Redux', icon: redux },
-  { name: 'Node JS', icon: node },
-  { name: 'Firebase', icon: firebase },
-  { name: 'MongoDB', icon: mongodb },
-  { name: 'Python', icon: python },
-  { name: 'HTML 5', icon: html5 },
-  { name: 'CSS 3', icon: css },
-  { name: 'GitHub', icon: githubIcon },
-  { name: 'Figma', icon: figma },
-  { name: 'VSCode', icon: vscode },
-  { name: 'Postman', icon: postman },
-  { name: 'Vercel', icon: vercel },
-  { name: 'Netlify', icon: netlify },
-  { name: 'Markdown', icon: markdown },
+  { name: 'Redux',        icon: redux },
+  { name: 'Flutter',      icon: flutter },
+  { name: 'Dart',         icon: dart },
+  { name: 'Shadcn',       icon: shadcn },
+  { name: 'HTML 5',       icon: html5 },
+  { name: 'CSS 3',        icon: css },
+  // Backend
+  { name: 'Node JS',      icon: node },
+  { name: 'Express.js',   icon: express },
+  { name: 'Python',       icon: python },
+  { name: 'Firebase',     icon: firebase },
+  // Databases & Cloud
+  { name: 'MongoDB',      icon: mongodb },
+  { name: 'Redis',        icon: redis },
+  { name: 'AWS',          icon: aws },
+  { name: 'GCP',          icon: gcp },
+  { name: 'Docker',       icon: docker },
+  // Tools
+  { name: 'GitHub',       icon: githubIcon },
+  { name: 'Figma',        icon: figma },
+  { name: 'VSCode',       icon: vscode },
+  { name: 'Postman',      icon: postman },
+  { name: 'Vercel',       icon: vercel },
+  { name: 'Netlify',      icon: netlify },
+  { name: 'Markdown',     icon: markdown },
 ];
 
 export const timeline: TimelineEntry[] = [

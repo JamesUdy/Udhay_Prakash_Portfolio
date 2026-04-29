@@ -48,6 +48,14 @@ import api from './icons/api.svg';
 import electron from './icons/electron.svg';
 import webstorm from './icons/webstorm.svg';
 import redux from './icons/redux.svg';
+import express from './icons/express.svg';
+import flutter from './icons/flutter.svg';
+import dart from './icons/dart.svg';
+import redis from './icons/redis.svg';
+import aws from './icons/aws.svg';
+import gcp from './icons/gcp.svg';
+import docker from './icons/docker.svg';
+import shadcn from './icons/shadcn.svg';
 
 import linkedIn from './icons/linkedIn.jsx';
 import githubLogo from './icons/githubIcon.jsx';
@@ -103,6 +111,14 @@ export {
   electron,
   webstorm,
   redux,
+  express,
+  flutter,
+  dart,
+  redis,
+  aws,
+  gcp,
+  docker,
+  shadcn,
   linkedIn,
   whatsapp,
   githubLogo,

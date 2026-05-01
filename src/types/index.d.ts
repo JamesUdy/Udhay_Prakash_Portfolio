@@ -36,9 +36,10 @@ declare interface Project {
   description: string;
   tags: ProjectTag[];
   image: string;
-  status: 'completed' | 'developing';
+  status: 'completed' | 'abandoned' | 'developing' | 'coming-soon';
   source?: string;
   demo?: string;
+  size?: 'large' | 'medium' | 'small';
 }
 
 declare interface SocialMediaLink {

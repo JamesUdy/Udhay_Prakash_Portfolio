@@ -124,45 +124,38 @@ Full rework of Udhaya Prakash's portfolio from a single-page scroll app to a mul
 
 ### `/timeline` — Experience + Education
 
-> **Two layout options implemented — choose one before final ship**
+> **Implemented: Git Graph UI** — career as a `git log`
 
-#### Option A — Horizontal Scroll "Film Strip" (Chapter View)
-
-```
-← [ Edu 2019 ] ────── [ Legacy HQ ] ────── [ Adrig ] ────── [ Terra ] →
-       ↓                    ↓                   ↓                ↓
-  [chapter expands     [chapter expands    [chapter expands  [chapter expands
-   with content]        with content]       with content]     with content]
-```
-
-- Full-width horizontal scroll, one chapter per role
-- CSS `scroll-snap` — snaps per viewport width
-- Progress bar at top showing position through timeline
-- Each chapter: role title + date left, media slot right (image/video)
-- **Best for:** Immersive storytelling, rich media
-- **Trade-off:** Less discoverable on desktop without hint
-
-#### Option C — Bento / Magazine Grid (Recommended default)
+#### Git Graph (shipped)
 
 ```
-┌──────────────┬───────────────────────────────┐
-│  Role Title  │  Description + bullets        │
-│  Date chip   ├───────────┬───────────────────┤
-│  Company     │  Tags     │  Media (img/vid)  │
-└──────────────┴───────────┴───────────────────┘
+○ future commit... (pending review)
+│
+●  feat: join Terra as SDE-1          ← HEAD, pulsing ring
+│ ╮
+│ ●  feat: freelance — KANISKART      ← branch lane 1
+│ ╯
+●  feat: join Adrig as Junior Dev
+│
+●  feat: join Legacy HQ               ← mergeFrom SkillVertex
+│ ╮
+│ ●  feat: SkillVertex internship     ← branch lane 1
+│ ╯
+●  feat: B.E. Computer Science
+│
+◉  init: origin                       ← birth commit
 ```
 
-- Each experience = independent bento card (CSS Grid)
-- Cells: role info | bullets | tech tags | media slot (graceful empty state)
-- Media slot ready for images/videos — just drop in, layout adapts
-- Framer Motion `whileInView` stagger on scroll
-- **Best for:** Scalable, premium, works great with or without media
-- **Trade-off:** Needs consistent card design
-
-#### Decision: Implement both, toggle between views
-- Default render: **Option C (Bento)**
-- "Focus Mode" toggle button: switches to **Option A (Film Strip)**
-- State: `const [view, setView] = useState<'bento' | 'filmstrip'>('bento')`
+- Each role/education entry = a git commit row (click to expand diff)
+- Two-lane SVG graph: `main` lane + feature lane for parallel activity (freelance / internship)
+- Bezier branch/merge curves with animated `pathLength` draw-on
+- Commit card: SHA, branch badge, type badge, message, author, `+lines/-lines` stat
+- Expand panel: `git diff`-style body — `+ bullet` lines animate in stagger
+- HEAD commit has a pulsing ring; future commit pulses with "pending review" dots
+- Scroll-driven progress bar on the left track
+- Terminal chrome: `TermBar` + `LogHeader` + blinking cursor prompt at the bottom
+- Footer: tea-cup counter joke lines
+- Mobile: single lane, narrower SVG
 
 ### `/projects` — Projects
 - Masonry or equal card grid
@@ -289,26 +282,28 @@ User clicks toggle
 ## Implementation Order
 
 ```
-Step  Task                                               Est.
-────────────────────────────────────────────────────────────
-1.    Set up react-router routes + React.lazy pages    1-2h
-2.    CSS custom property theme tokens (dark/light)    1h
-3.    ThemeContext + localStorage + prefers-color      1h
-4.    Build floating bottom navbar + theme toggle      1-2h
-5.    Theme toggle zap animation + sound effect        1-2h
-6.    Build water-fill loading screen                  2-3h
-7.    Hero page rework                                 1-2h
-8.    About + Skills page                              2h
-9.    Timeline — Option C (Bento) default              2-3h
-10.   Timeline — Option A (Film Strip) toggle          2h
-11.   Projects page + modal                            2-3h
-12.   Contact page                                     1h
-13.   Resume viewer page                               1h
-14.   Page transitions + global animation polish       2h
-15.   SEO (react-helmet-async, schema, sitemap)        1h
-16.   Performance audit + code splitting               1h
-────────────────────────────────────────────────────────────
-      Total estimated                                 22-28h
+Step  Task                                               Status
+────────────────────────────────────────────────────────────────
+1.    Set up react-router routes + React.lazy pages    ✅ Done
+2.    CSS custom property theme tokens (dark/light)    ✅ Done
+3.    ThemeContext + localStorage + prefers-color      ✅ Done
+4.    Build floating bottom navbar + theme toggle      ✅ Done
+5.    Theme toggle (bulb loader + zap overlay)         ✅ Done
+6.    Build bulb-flicker loading screen                ✅ Done  (BulbLoader — replaces water-fill)
+7.    Hero page rework                                 ✅ Done
+8.    About + Skills page                              ✅ Done
+9.    Timeline — Git Graph UI                          ✅ Done  (replaced Bento + Film Strip)
+10.   Page transitions (PageTransition overlay)        ✅ Done
+11.   useScrollDirection hook                          ✅ Done
+────────────────────────────────────────────────────────────────
+12.   Projects page rework + modal                     ⬜ Todo  (currently old component, not reworked)
+13.   Contact page rework                              ⬜ Todo  (currently old component, not reworked)
+14.   Resume viewer page rework                        ⬜ Todo  (iframe works, needs design polish)
+15.   SEO (react-helmet-async, schema, sitemap)        ⬜ Todo
+16.   Performance audit + code splitting               ⬜ Todo  (lazy() already in place)
+17.   Custom cursor (optional)                         ⬜ Todo
+────────────────────────────────────────────────────────────────
+      Remaining                                        8-11h
 ```
 
 ---
@@ -317,7 +312,7 @@ Step  Task                                               Est.
 
 | Old | New |
 |-----|-----|
-| `react-vertical-timeline-component` | Custom Bento Grid + Film Strip |
+| `react-vertical-timeline-component` | Custom Git Graph UI |
 | Anchor-scroll single page | True routes with `react-router-dom` |
 | Top horizontal navbar | Floating bottom pill navbar |
 | No loading screen | Water fill loader |
@@ -369,8 +364,7 @@ src/
 
 ## Notes
 
-- Media slots in Timeline cards intentionally left empty for now — layout handles graceful empty state
-- Timeline view toggle (Bento ↔ Film Strip) decision to be made during implementation review
+- Timeline is the Git Graph UI — no view toggle needed, Bento and Film Strip were dropped
 - Custom cursor is optional — implement last, remove if it hurts performance
 - Google Analytics tag `G-9BEXBVLS8F` should be kept in `index.html`
 - Theme default: respect `prefers-color-scheme` on first visit; persist in `localStorage` after first toggle

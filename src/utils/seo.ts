@@ -11,38 +11,38 @@ export interface RouteMeta {
 
 export const routeMeta: Record<string, RouteMeta> = {
   '/': {
-    title: 'Udhaya Prakash — Full Stack Developer',
+    title: 'Udhaya Prakash M — Full Stack Developer',
     description:
       'Portfolio of Udhaya Prakash M, Full Stack Developer specialising in React, Node.js, and modern web experiences.',
     path: '/',
     ogImage: OG_IMAGE,
   },
   '/about': {
-    title: 'About — Udhaya Prakash',
+    title: 'About — Udhaya Prakash M',
     description: 'Skills, background, and expertise of Udhaya Prakash M — Full Stack Developer.',
     path: '/about',
     ogImage: OG_IMAGE,
   },
   '/timeline': {
-    title: 'Experience — Udhaya Prakash',
+    title: 'Experience — Udhaya Prakash M',
     description: 'Work experience and education timeline of Udhaya Prakash M.',
     path: '/timeline',
     ogImage: OG_IMAGE,
   },
   '/projects': {
-    title: 'Projects — Udhaya Prakash',
+    title: 'Projects — Udhaya Prakash M',
     description: 'Showcase of projects built by Udhaya Prakash M.',
     path: '/projects',
     ogImage: OG_IMAGE,
   },
   '/contact': {
-    title: 'Contact — Udhaya Prakash',
+    title: 'Contact — Udhaya Prakash M',
     description: 'Get in touch with Udhaya Prakash M.',
     path: '/contact',
     ogImage: OG_IMAGE,
   },
   '/resume': {
-    title: 'Resume — Udhaya Prakash',
+    title: 'Resume — Udhaya Prakash M',
     description: 'View and download the resume of Udhaya Prakash M.',
     path: '/resume',
     ogImage: OG_IMAGE,

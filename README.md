@@ -13,7 +13,7 @@ Full Stack Engineer with 3+ years of experience building scalable web applicatio
 **Frontend:** React, Next.js, TypeScript, JavaScript, Tailwind CSS, Redux, Shadcn/UI, HTML5, CSS3, Framer Motion  
 **Mobile:** Flutter, Dart  
 **Backend:** Node.js, Express.js, Python  
-**Databases & Cloud:** MongoDB, Firebase, Redis, AWS, GCP, Docker  
+**Databases & Cloud:** MongoDB, Firebase, Redis, AWS, GCP, Docker, Firestore
 **Tools:** GitHub, Figma, VSCode, Postman, Markdown  
 **Hosting:** Vercel, Netlify
 

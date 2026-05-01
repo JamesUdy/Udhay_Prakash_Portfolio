@@ -8,10 +8,7 @@ const personSchema = {
   name: AUTHOR,
   url: SITE_URL,
   jobTitle: 'Full Stack Developer',
-  sameAs: [
-    'https://github.com/UdhayaPrakashM',
-    'https://www.linkedin.com/in/udhaya-prakash-m',
-  ],
+  sameAs: ['https://github.com/UdhayaPrakashM', 'https://www.linkedin.com/in/udhaya-prakash-m'],
 };
 
 export default function HelmetWrapper() {
@@ -44,9 +41,7 @@ export default function HelmetWrapper() {
 
       {/* JSON-LD Person schema — only on home route */}
       {pathname === '/' && (
-        <script type="application/ld+json">
-          {JSON.stringify(personSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       )}
     </Helmet>
   );

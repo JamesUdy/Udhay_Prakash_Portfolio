@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://udhay-prakash-portfolio.vercel.app/</loc>
+    <loc>https://udy.me/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://udhay-prakash-portfolio.vercel.app/about</loc>
+    <loc>https://udy.me/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://udhay-prakash-portfolio.vercel.app/timeline</loc>
+    <loc>https://udy.me/timeline</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://udhay-prakash-portfolio.vercel.app/projects</loc>
+    <loc>https://udy.me/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://udhay-prakash-portfolio.vercel.app/contact</loc>
+    <loc>https://udy.me/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://udhay-prakash-portfolio.vercel.app/resume</loc>
+    <loc>https://udy.me/resume</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

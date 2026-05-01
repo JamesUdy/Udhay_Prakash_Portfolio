@@ -10,9 +10,9 @@ import HelmetWrapper from './components/SEO/HelmetWrapper';
 const Hero = lazy(() => import('./pages/Hero'));
 const About = lazy(() => import('./pages/About'));
 const Timeline = lazy(() => import('./pages/Timeline'));
-const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Resume = lazy(() => import('./pages/Resume'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // #region Helpers
 
@@ -87,9 +87,10 @@ function AnimatedRoutes() {
               <Route path="/" element={<Hero />} />
               <Route path="/about" element={<About />} />
               <Route path="/timeline" element={<Timeline />} />
-              <Route path="/projects" element={<Projects />} />
+
               <Route path="/contact" element={<Contact />} />
               <Route path="/resume" element={<Resume />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </motion.div>

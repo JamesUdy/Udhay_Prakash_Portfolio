@@ -1,0 +1,265 @@
+/* ── Root ── */
+.nf-root {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-bg);
+  padding: 2rem 1.25rem 8rem;
+}
+
+/* ── Aurora blobs ── */
+.nf-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nf-blob--1 {
+  width: 560px;
+  height: 560px;
+  top: -140px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.5) 0%, transparent 70%);
+  animation: nfBlob1 14s ease-in-out infinite alternate;
+}
+
+.nf-blob--2 {
+  width: 480px;
+  height: 480px;
+  bottom: -80px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%);
+  animation: nfBlob2 18s ease-in-out infinite alternate;
+}
+
+.nf-blob--3 {
+  width: 320px;
+  height: 320px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+  animation: nfBlob3 22s ease-in-out infinite alternate;
+}
+
+@keyframes nfBlob1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(60px, 40px) scale(1.15); }
+}
+@keyframes nfBlob2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-50px, -30px) scale(1.1); }
+}
+@keyframes nfBlob3 {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to   { transform: translate(-50%, -50%) scale(1.25); }
+}
+
+/* ── Glitch number ── */
+.nf-glitch-wrap {
+  position: relative;
+  z-index: 1;
+  user-select: none;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.nf-glitch {
+  font-size: clamp(8rem, 22vw, 18rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-accent);
+  position: relative;
+  display: inline-block;
+  animation: nfGlitchBase 3.5s infinite;
+}
+
+.nf-glitch::before,
+.nf-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  -webkit-text-stroke: 2px transparent;
+}
+
+.nf-glitch::before {
+  color: #06b6d4;
+  animation: nfGlitchBefore 3.5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.nf-glitch::after {
+  color: #ec4899;
+  animation: nfGlitchAfter 3.5s infinite;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes nfGlitchBase {
+  0%, 90%, 100%  { transform: translate(0); }
+  91%            { transform: translate(-3px, 1px); }
+  93%            { transform: translate(3px, -1px); }
+  95%            { transform: translate(-2px, 2px); }
+  97%            { transform: translate(2px, -2px); }
+}
+
+@keyframes nfGlitchBefore {
+  0%, 88%, 100%  { transform: translate(0); opacity: 0; }
+  89%            { transform: translate(-6px, 0); opacity: 0.85; }
+  91%            { transform: translate(6px, 0); opacity: 0.85; }
+  93%            { transform: translate(-4px, 1px); opacity: 0.85; }
+  95%            { transform: translate(4px, -1px); opacity: 0.85; }
+  97%            { transform: translate(0); opacity: 0; }
+}
+
+@keyframes nfGlitchAfter {
+  0%, 88%, 100%  { transform: translate(0); opacity: 0; }
+  89%            { transform: translate(6px, 0); opacity: 0.85; }
+  91%            { transform: translate(-6px, 0); opacity: 0.85; }
+  93%            { transform: translate(4px, -1px); opacity: 0.85; }
+  95%            { transform: translate(-4px, 1px); opacity: 0.85; }
+  97%            { transform: translate(0); opacity: 0; }
+}
+
+/* ── Scanlines overlay ── */
+.nf-scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  animation: nfScan 8s linear infinite;
+}
+
+@keyframes nfScan {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100px; }
+}
+
+/* ── Content ── */
+.nf-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.nf-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 99px;
+  background: rgba(var(--color-glow-rgb), 0.08);
+}
+
+.nf-title {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.nf-desc {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--color-text-muted);
+  max-width: 36ch;
+  line-height: 1.7;
+}
+
+/* ── Particles ── */
+.nf-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: nfFloat var(--dur) ease-in-out infinite var(--delay);
+}
+
+@keyframes nfFloat {
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  20%  { opacity: 0.6; }
+  80%  { opacity: 0.3; }
+  100% { transform: translateY(-120px) scale(0.3); opacity: 0; }
+}
+
+/* ── CTA button ── */
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 99px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent), #06b6d4);
+  box-shadow: 0 0 24px rgba(var(--color-glow-rgb), 0.4);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.nf-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 40px rgba(var(--color-glow-rgb), 0.6);
+}
+
+/* ── Orbit ring ── */
+.nf-orbit-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nf-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(var(--color-glow-rgb), 0.18);
+  animation: nfOrbitSpin var(--speed) linear infinite;
+}
+
+.nf-orbit--dot::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent);
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes nfOrbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

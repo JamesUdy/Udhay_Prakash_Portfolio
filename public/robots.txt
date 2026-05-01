@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://udhay-prakash-portfolio.vercel.app/sitemap.xml
+Sitemap: https://udy.me/sitemap.xml
 
 User-agent: GPTBot
 Disallow: /

@@ -1,4 +1,4 @@
-const SITE_URL = 'https://udhay-prakash-portfolio.vercel.app';
+const SITE_URL = 'https://udy.me';
 const OG_IMAGE = 'https://i.imgur.com/9KeqkMu.png';
 const AUTHOR = 'Udhaya Prakash M';
 

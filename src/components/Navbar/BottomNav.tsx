@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, User, CalendarDays, Layers, Mail, FileText } from 'lucide-react';
+import { Home, User, CalendarDays, Mail, FileText } from 'lucide-react';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import ThemeToggle from '../ui/ThemeToggle';
 
@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { path: '/', label: 'Home', Icon: Home },
   { path: '/about', label: 'About', Icon: User },
   { path: '/timeline', label: 'Experience', Icon: CalendarDays },
-  { path: '/projects', label: 'Projects', Icon: Layers },
+
   { path: '/contact', label: 'Contact', Icon: Mail },
   { path: '/resume', label: 'Resume', Icon: FileText },
 ] as const;

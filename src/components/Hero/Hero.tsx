@@ -222,8 +222,8 @@ export default function Hero() {
 
           {/* CTA buttons */}
           <motion.div variants={fadeUp} className="hero-ctas">
-            <Link to="/projects" className="hero-cta hero-cta--primary">
-              View Work
+            <Link to="/timeline" className="hero-cta hero-cta--primary">
+              View Experience
             </Link>
             <Link to="/contact" className="hero-cta hero-cta--secondary">
               Contact Me

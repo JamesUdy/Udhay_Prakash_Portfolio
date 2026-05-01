@@ -22,6 +22,7 @@ declare interface TimelineEntry {
   title: string;
   location: string;
   date: string;
+  type: 'fulltime' | 'freelance' | 'internship' | 'education' | 'origin';
   description?: string[];
 }
 

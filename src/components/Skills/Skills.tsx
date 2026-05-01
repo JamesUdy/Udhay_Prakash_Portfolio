@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import MarqueeLib from 'react-fast-marquee';
-const Marquee = (MarqueeLib as any).default ?? MarqueeLib;
+const Marquee = (MarqueeLib as { default?: typeof MarqueeLib }).default ?? MarqueeLib;
 import { skillSet } from '../../constants';
 import './skills.css';
 

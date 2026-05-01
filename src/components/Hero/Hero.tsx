@@ -80,8 +80,10 @@ function TypewriterText({ texts }: { texts: string[] }) {
       if (displayed.length > 0) {
         timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 28);
       } else {
-        setTextIdx((i) => (i + 1) % texts.length);
-        setPhase('typing');
+        timeout = setTimeout(() => {
+          setTextIdx((i) => (i + 1) % texts.length);
+          setPhase('typing');
+        }, 0);
       }
     }
 
@@ -254,9 +256,11 @@ export default function Hero() {
               <Canvas style={{ width: '100%', height: '100%' }}>
                 <Suspense fallback={null}>
                   <OrbitControls enableZoom={false} />
+                  {/* eslint-disable react/no-unknown-property */}
                   <ambientLight intensity={0.7} />
                   <directionalLight position={[3, 2, 1]} intensity={1.2} />
                   <pointLight position={[-3, -2, -2]} intensity={0.4} color="#06b6d4" />
+                  {/* eslint-enable react/no-unknown-property */}
                   <Sphere args={[1, 64, 64]} scale={2.4}>
                     <MeshDistortMaterial
                       color={sphereColor}

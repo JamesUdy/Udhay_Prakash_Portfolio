@@ -177,7 +177,7 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
   const [bloomScale, setBloomScale] = useState(0);
   const [visible, setVisible] = useState(true);
   const rafRef = useRef<number>(0);
-  const startRef = useRef(Date.now());
+  const startRef = useRef(0);
 
   const isDark = theme === 'dark';
   const bgColor = isDark ? '#050816' : '#f8f7ff';
@@ -185,16 +185,13 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
 
   useEffect(() => {
     playBulbSound('flicker');
+    startRef.current = Date.now();
 
     // Timeline (ms):
     // 0 – 1400  flicker  rapid irregular pulses
     // 1400 – 2200  struggle  slow deliberate ramp
     // 2200 – 2900  bloom    full bright + radial flood
     // 2900 – 3300  exit     fade out, reveal page
-
-    let phase2Timer: ReturnType<typeof setTimeout>;
-    let phase3Timer: ReturnType<typeof setTimeout>;
-    let doneTimer: ReturnType<typeof setTimeout>;
 
     const flickerInterval = setInterval(() => {
       const elapsed = Date.now() - startRef.current;
@@ -205,7 +202,7 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
       setGlow(Math.random() < 0.55 ? Math.random() * 0.38 : 0.02);
     }, 65);
 
-    phase2Timer = setTimeout(() => {
+    const phase2Timer = setTimeout(() => {
       setPhase('struggle');
       let g = 0.12;
       const ramp = setInterval(() => {
@@ -215,7 +212,7 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
       }, 38);
     }, 1400);
 
-    phase3Timer = setTimeout(() => {
+    const phase3Timer = setTimeout(() => {
       setPhase('bloom');
       setGlow(1);
       playBulbSound('bloom');
@@ -229,7 +226,7 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
       rafRef.current = requestAnimationFrame(step);
     }, 2200);
 
-    doneTimer = setTimeout(() => {
+    const doneTimer = setTimeout(() => {
       setVisible(false);
       setTimeout(() => {
         setPhase('done');

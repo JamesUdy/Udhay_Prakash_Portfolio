@@ -91,6 +91,9 @@ function InkBleedOverlay({ x, y, toLight, onDone }: BleedProps) {
 
 /* ─── Lightning sparks ───────────────────────────────────────────────────── */
 
+const SPARK_COUNT = 8;
+const SPARK_LENGTHS = Array.from({ length: SPARK_COUNT }, () => 18 + Math.random() * 18);
+
 interface SparksProps {
   x: number;
   y: number;
@@ -99,7 +102,8 @@ interface SparksProps {
 
 function LightningSparks({ x, y, toLight }: SparksProps) {
   const color = toLight ? '#c4b5fd' : '#7c3aed';
-  const count = 8;
+  const count = SPARK_COUNT;
+  const lengths = SPARK_LENGTHS;
 
   return createPortal(
     <div
@@ -109,7 +113,7 @@ function LightningSparks({ x, y, toLight }: SparksProps) {
     >
       {Array.from({ length: count }).map((_, i) => {
         const angle = (360 / count) * i;
-        const len = 18 + Math.random() * 18;
+        const len = lengths[i];
         return (
           <div
             key={i}
@@ -159,7 +163,7 @@ export default function ThemeToggle() {
     setFlash({ id, x, y, toLight });
 
     // flip theme at the peak of the bleed (170ms in)
-    setTimeout(() => toggleTheme(x, y), 170);
+    setTimeout(() => toggleTheme(), 170);
 
     // clear sparks after their CSS animation ends
     setTimeout(() => setSparks(null), 500);

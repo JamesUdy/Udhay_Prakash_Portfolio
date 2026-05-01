@@ -64,8 +64,10 @@ function useTypewriter(text: string, startDelay: number) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    setDisplayed('');
-    setDone(false);
+    setTimeout(() => {
+      setDisplayed('');
+      setDone(false);
+    }, 0);
     let i = 0;
     const timeout = setTimeout(() => {
       const interval = setInterval(() => {
@@ -167,7 +169,9 @@ export default function PageTransition({ pathname, onComplete }: PageTransitionP
   const [visible, setVisible] = useState(true);
   const [completedLines, setCompletedLines] = useState(0);
   const onCompleteRef = useRef(onComplete);
-  onCompleteRef.current = onComplete;
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  });
 
   const config = ROUTE_CONFIG[pathname] ?? null;
   const isDark = theme === 'dark';

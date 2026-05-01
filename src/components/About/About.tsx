@@ -96,7 +96,7 @@ export default function About() {
 
           <div className="about-ctas">
             <Link to="/contact" className="about-cta about-cta--primary">
-              Let's Talk
+              Let&apos;s Talk
             </Link>
             <a
               href="https://read.cv/jamesudy"

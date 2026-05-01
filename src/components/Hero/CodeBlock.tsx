@@ -111,9 +111,11 @@ export default function CodeBlock() {
   useEffect(() => {
     let li = 0;
     let ci = 0;
-    setVisibleChars(LINES.map(() => 0));
-    setActiveLine(0);
-    setDone(false);
+    setTimeout(() => {
+      setVisibleChars(LINES.map(() => 0));
+      setActiveLine(0);
+      setDone(false);
+    }, 0);
 
     function tick() {
       if (li >= LINES.length) {

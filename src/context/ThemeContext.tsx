@@ -4,9 +4,10 @@ type Theme = 'dark' | 'light';
 
 interface ThemeContextValue {
   theme: Theme;
-  toggleTheme: (originX?: number, originY?: number) => void;
+  toggleTheme: () => void;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<ThemeContextValue>({
   theme: 'dark',
   toggleTheme: () => {},
@@ -26,7 +27,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const toggleTheme = useCallback((_originX?: number, _originY?: number) => {
+  const toggleTheme = useCallback(() => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   }, []);
 

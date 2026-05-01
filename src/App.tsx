@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState, useEffect, useRef } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
@@ -32,8 +32,8 @@ function AnimatedRoutes() {
   // during a transition this stays on the old path so the old page
   // sits frozen underneath the overlay (opacity 0 — not visible)
   const [renderedPath, setRenderedPath] = useState(location.pathname);
+  const [pendingPath, setPendingPath] = useState(location.pathname);
   const [transitioning, setTransitioning] = useState(false);
-  const pendingPathRef = useRef<string>(location.pathname);
 
   useEffect(() => {
     const next = location.pathname;
@@ -41,16 +41,18 @@ function AnimatedRoutes() {
 
     // hero has no page transition overlay — swap immediately
     if (next === '/') {
-      setRenderedPath(next);
+      setTimeout(() => setRenderedPath(next), 0);
       return;
     }
 
-    pendingPathRef.current = next;
-    setTransitioning(true);
-  }, [location.pathname]);
+    setTimeout(() => {
+      setPendingPath(next);
+      setTransitioning(true);
+    }, 0);
+  }, [location.pathname, renderedPath]);
 
   function handleTransitionDone() {
-    setRenderedPath(pendingPathRef.current);
+    setRenderedPath(pendingPath);
     setTransitioning(false);
   }
 
@@ -60,7 +62,7 @@ function AnimatedRoutes() {
       {transitioning && (
         <PageTransition
           key={location.pathname}
-          pathname={pendingPathRef.current}
+          pathname={pendingPath}
           onComplete={handleTransitionDone}
         />
       )}

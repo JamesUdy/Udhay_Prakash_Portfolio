@@ -3,6 +3,46 @@ declare module '*.css' {
   export default content;
 }
 
+declare module '*.avif' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.webp' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.webm' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.mp4' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.svg' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.png' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.jpg' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.pdf' {
+  const src: string;
+  export default src;
+}
+
 declare module 'maath/random/dist/maath-random.esm' {
   export function inSphere(array: Float32Array, options: { radius: number }): Float32Array;
 }

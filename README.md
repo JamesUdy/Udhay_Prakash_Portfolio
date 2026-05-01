@@ -4,7 +4,7 @@
 
 ## Introduction
 
-👋 Greetings! I'm Udhaya Prakash M, a fervent Front-End Maestro adept at weaving captivating digital tapestries. My odyssey is a fusion of virtuoso freelancing and immersive internships, expertly choreographed around cutting-edge front-end technologies to orchestrate enchanting digital symphonies.
+👋 Greetings! I'm Udhaya Prakash M, a fervent Fullstack Maestro adept at weaving captivating digital tapestries. My odyssey is a fusion of virtuoso freelancing and immersive internships, expertly choreographed around cutting-edge front-end technologies to orchestrate enchanting digital symphonies.
 
 ## Table of Contents
 

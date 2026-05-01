@@ -5,6 +5,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import BottomNav from './components/Navbar/BottomNav';
 import BulbLoader from './components/Loader/BulbLoader';
 import PageTransition from './components/Loader/PageTransition';
+import HelmetWrapper from './components/SEO/HelmetWrapper';
 
 const Hero = lazy(() => import('./pages/Hero'));
 const About = lazy(() => import('./pages/About'));
@@ -58,6 +59,8 @@ function AnimatedRoutes() {
 
   return (
     <>
+      <HelmetWrapper />
+
       {/* Overlay fires BEFORE the page swaps */}
       {transitioning && (
         <PageTransition

@@ -58,8 +58,8 @@
 .git-progress-track {
   position: absolute;
   left: -3px;
-  top: 0;
-  bottom: 0;
+  top: 16px;
+  bottom: 16px;
   width: 3px;
   background: var(--color-border);
   border-radius: 99px;
@@ -159,81 +159,35 @@
 
 .git-log {
   padding: 0.25rem 0 0.5rem;
+  position: relative;
+}
+
+/* ── SVG graph overlay ── */
+.git-graph-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
 }
 
 .git-row {
   display: flex;
-  gap: 0;
   position: relative;
+  /* paddingLeft set inline = SVG_W + 4 to clear the graph */
 }
 
-/* ── Lane column ── */
-.git-lane {
-  width: 44px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.git-pipe {
-  width: 2px;
-  background: linear-gradient(to bottom, var(--cc, var(--color-accent)), color-mix(in srgb, var(--cc, var(--color-accent)) 40%, transparent));
-  flex: 1;
-  transform-origin: top;
-  min-height: 20px;
-  opacity: 0.45;
-}
-
-.git-pipe--above { transform-origin: bottom; }
-.git-pipe--below { transform-origin: top; }
-
-/* commit dot */
-.git-dot-wrap {
-  position: relative;
-  cursor: pointer;
-  flex-shrink: 0;
-  padding: 6px;
-  outline: none;
-}
-
-.git-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, color-mix(in srgb, var(--cc, var(--color-accent)) 90%, white), var(--cc, var(--color-accent)));
-  border: 2.5px solid var(--color-surface);
-  box-shadow:
-    0 0 0 2px var(--cc, var(--color-accent)),
-    0 0 12px color-mix(in srgb, var(--cc, var(--color-accent)) 55%, transparent);
-  position: relative;
-  z-index: 2;
-  transition: transform 0.18s;
-}
-
-.git-dot-wrap:hover .git-dot {
-  transform: scale(1.25);
-}
-
-.git-dot-ring {
+/* invisible click zone over each dot */
+.git-dot-hitbox {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 2px solid var(--cc, var(--color-accent));
-  pointer-events: none;
-}
-
-.git-dot--future {
-  background: var(--color-surface-2);
-  border-color: var(--color-border);
-  box-shadow: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.6rem;
-  color: var(--color-text-muted);
-  cursor: default;
+  cursor: pointer;
+  z-index: 3;
 }
 
 /* ── Commit card ── */
@@ -574,6 +528,7 @@
 
 .git-row--future .git-card {
   border-bottom: none;
+  cursor: default;
 }
 
 /* ══════════════════════════════════════════
@@ -588,6 +543,40 @@
   border-top: 1px dashed var(--color-border);
   display: flex;
   align-items: center;
+}
+
+.git-footer-jokes {
+  padding: 1rem 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.git-joke-line {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  margin: 0;
+}
+
+.git-joke-line--muted {
+  opacity: 0.3;
+  margin-top: 0.35rem;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.git-joke-label {
+  color: #f59e0b;
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+
+.git-tea-count {
+  color: #f59e0b;
+  font-weight: 700;
 }
 
 /* ══════════════════════════════════════════

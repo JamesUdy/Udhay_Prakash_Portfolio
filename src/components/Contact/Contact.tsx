@@ -1,4 +1,12 @@
-import { useState, useRef, useContext, useCallback, useEffect, useMemo, type ChangeEvent } from 'react';
+import {
+  useState,
+  useRef,
+  useContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  type ChangeEvent,
+} from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
@@ -17,7 +25,9 @@ function ensureEngine() {
   if (!enginePromise) {
     enginePromise = initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => { engineReady = true; });
+    }).then(() => {
+      engineReady = true;
+    });
   }
   return enginePromise;
 }
@@ -99,13 +109,21 @@ function ContactParticles() {
 // #endregion
 
 // #region Types
-type FormState  = { name: string; email: string; message: string };
-type Phase      = 'idle' | 'sending' | 'success' | 'error';
+type FormState = { name: string; email: string; message: string };
+type Phase = 'idle' | 'sending' | 'success' | 'error';
 const EMPTY: FormState = { name: '', email: '', message: '' };
 // #endregion
 
 // #region TerminalLine — typed output with cursor
-function TerminalLine({ text, delay = 0, color }: { text: string; delay?: number; color?: string }) {
+function TerminalLine({
+  text,
+  delay = 0,
+  color,
+}: {
+  text: string;
+  delay?: number;
+  color?: string;
+}) {
   const [shown, setShown] = useState('');
 
   useEffect(() => {
@@ -163,12 +181,12 @@ function DeliveryProgress() {
 // #region TerminalForm
 function TerminalForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [form,  setForm]  = useState<FormState>(EMPTY);
+  const [form, setForm] = useState<FormState>(EMPTY);
   const [phase, setPhase] = useState<Phase>('idle');
 
   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
+    setForm((prev) => ({ ...prev, [name]: value }));
   }
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
@@ -179,21 +197,30 @@ function TerminalForm() {
       .send(
         'service_02o4n3k',
         'template_wzx16is',
-        { from_name: form.name, to_name: 'Udhay', from_email: form.email, to_email: 'udayamvad@gmail.com', message: form.message },
-        '5wQj0dSc8N7OG7Vk9',
+        {
+          from_name: form.name,
+          to_name: 'Udhay',
+          from_email: form.email,
+          to_email: 'udayamvad@gmail.com',
+          message: form.message,
+        },
+        '5wQj0dSc8N7OG7Vk9'
       )
-      .then(() => { setPhase('success'); setForm(EMPTY); })
+      .then(() => {
+        setPhase('success');
+        setForm(EMPTY);
+      })
       .catch(() => setPhase('error'));
   }
 
-  const done    = phase === 'success' || phase === 'error';
+  const done = phase === 'success' || phase === 'error';
   const sending = phase === 'sending';
 
   return (
     <div className="ctf-terminal">
       {/* title bar */}
       <div className="ctf-term-bar">
-        <span className="ctf-term-dot ctf-term-dot--red"   />
+        <span className="ctf-term-dot ctf-term-dot--red" />
         <span className="ctf-term-dot ctf-term-dot--amber" />
         <span className="ctf-term-dot ctf-term-dot--green" />
         <span className="ctf-term-bar-title">udhay@portfolio ~ contact</span>
@@ -279,16 +306,21 @@ function TerminalForm() {
               {/* submit */}
               <button type="submit" disabled={sending} className="ctf-term-submit">
                 {sending ? (
-                  <><span className="ctf-term-spinner" /> executing…</>
+                  <>
+                    <span className="ctf-term-spinner" /> executing…
+                  </>
                 ) : (
-                  <><span className="ctf-term-prompt">$</span> send --message</>
+                  <>
+                    <span className="ctf-term-prompt">$</span> send --message
+                  </>
                 )}
               </button>
 
               {sending && (
                 <motion.div
                   className="ctf-term-line ctf-term-line--dim"
-                  initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                 >
                   <span className="ctf-term-prompt">›</span>
                   <span>establishing connection to udhay@portfolio…</span>
@@ -305,21 +337,50 @@ function TerminalForm() {
             >
               {phase === 'success' ? (
                 <>
-                  <TerminalLine text="connecting to mail relay…"          delay={0}    color="var(--color-text-muted)" />
-                  <TerminalLine text="authenticating sender…"             delay={320}  color="var(--color-text-muted)" />
-                  <TerminalLine text="encrypting payload…"                delay={620}  color="var(--color-text-muted)" />
+                  <TerminalLine
+                    text="connecting to mail relay…"
+                    delay={0}
+                    color="var(--color-text-muted)"
+                  />
+                  <TerminalLine
+                    text="authenticating sender…"
+                    delay={320}
+                    color="var(--color-text-muted)"
+                  />
+                  <TerminalLine
+                    text="encrypting payload…"
+                    delay={620}
+                    color="var(--color-text-muted)"
+                  />
                   <DeliveryProgress />
-                  <TerminalLine text="✓ message delivered successfully."  delay={1600} color="#00c878" />
-                  <TerminalLine text="✓ Udhay will get back to you soon." delay={1900} color="#00c878" />
+                  <TerminalLine
+                    text="✓ message delivered successfully."
+                    delay={1600}
+                    color="#00c878"
+                  />
+                  <TerminalLine
+                    text="✓ Udhay will get back to you soon."
+                    delay={1900}
+                    color="#00c878"
+                  />
                   <div className="ctf-term-line ctf-term-line--dim" style={{ marginTop: '0.8rem' }}>
                     <span className="ctf-term-prompt">$</span>
-                    <motion.span animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1.1, repeat: Infinity }}>▌</motion.span>
+                    <motion.span
+                      animate={{ opacity: [1, 0, 1] }}
+                      transition={{ duration: 1.1, repeat: Infinity }}
+                    >
+                      ▌
+                    </motion.span>
                   </div>
                 </>
               ) : (
                 <>
-                  <TerminalLine text="✗ connection refused."               delay={0}   color="#f72585" />
-                  <TerminalLine text="✗ error: failed to send message."    delay={280} color="#f72585" />
+                  <TerminalLine text="✗ connection refused." delay={0} color="#f72585" />
+                  <TerminalLine
+                    text="✗ error: failed to send message."
+                    delay={280}
+                    color="#f72585"
+                  />
                   <button className="ctf-term-retry" onClick={() => setPhase('idle')}>
                     <span className="ctf-term-prompt">$</span> retry
                   </button>
@@ -336,10 +397,10 @@ function TerminalForm() {
 
 // #region SignalCard
 const SIGNAL_COLORS: Record<string, string> = {
-  LinkedIn:  '#0a66c2',
-  GitHub:    '#915eff',
-  WhatsApp:  '#25d366',
-  Mail:      '#f72585',
+  LinkedIn: '#0a66c2',
+  GitHub: '#915eff',
+  WhatsApp: '#25d366',
+  Mail: '#f72585',
 };
 
 function SignalBars({ color }: { color: string }) {
@@ -359,10 +420,10 @@ function SignalBars({ color }: { color: string }) {
   );
 }
 
-function SignalCard({ link, index }: { link: typeof socialMediaLinks[0]; index: number }) {
-  const ref    = useRef<HTMLAnchorElement>(null);
+function SignalCard({ link, index }: { link: (typeof socialMediaLinks)[0]; index: number }) {
+  const ref = useRef<HTMLAnchorElement>(null);
   const inView = useInView(ref, { once: true, margin: '-40px' });
-  const color  = SIGNAL_COLORS[link.siteName] ?? '#915eff';
+  const color = SIGNAL_COLORS[link.siteName] ?? '#915eff';
 
   return (
     <motion.a
@@ -383,7 +444,10 @@ function SignalCard({ link, index }: { link: typeof socialMediaLinks[0]; index: 
       <span className="ctf-signal-accentbar" />
 
       {/* icon */}
-      <span className="ctf-signal-icon" style={{ background: `${color}22`, border: `1px solid ${color}44` }}>
+      <span
+        className="ctf-signal-icon"
+        style={{ background: `${color}22`, border: `1px solid ${color}44` }}
+      >
         <link.icon />
       </span>
 
@@ -405,7 +469,13 @@ function SignalCard({ link, index }: { link: typeof socialMediaLinks[0]; index: 
       <SignalBars color={color} />
 
       {/* arrow */}
-      <svg className="ctf-signal-arrow" viewBox="0 0 16 16" fill="currentColor" width={12} height={12}>
+      <svg
+        className="ctf-signal-arrow"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        width={12}
+        height={12}
+      >
         <path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z" />
       </svg>
     </motion.a>
@@ -415,7 +485,7 @@ function SignalCard({ link, index }: { link: typeof socialMediaLinks[0]; index: 
 
 // #region Contact section
 export default function Contact() {
-  const headerRef  = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const headerInView = useInView(headerRef, { once: true, margin: '-60px' });
 
   return (
@@ -435,19 +505,28 @@ export default function Contact() {
       >
         <motion.p
           className="ctf-eyebrow"
-          variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
         >
           CONTACT
         </motion.p>
         <motion.h2
           className="ctf-heading"
-          variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
         >
           Get In Touch.
         </motion.h2>
         <motion.p
           className="ctf-subheading"
-          variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
         >
           Drop a message via the terminal or connect on any platform.
         </motion.p>

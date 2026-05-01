@@ -123,8 +123,22 @@ function BulbSVG({ glow }: { glow: number }) {
         />
 
         {/* filament support wires */}
-        <line x1="44" y1="96" x2="44" y2="72" stroke={`rgba(180,160,100,${filamentOpacity * 0.55})`} strokeWidth="1" />
-        <line x1="56" y1="96" x2="56" y2="72" stroke={`rgba(180,160,100,${filamentOpacity * 0.55})`} strokeWidth="1" />
+        <line
+          x1="44"
+          y1="96"
+          x2="44"
+          y2="72"
+          stroke={`rgba(180,160,100,${filamentOpacity * 0.55})`}
+          strokeWidth="1"
+        />
+        <line
+          x1="56"
+          y1="96"
+          x2="56"
+          y2="72"
+          stroke={`rgba(180,160,100,${filamentOpacity * 0.55})`}
+          strokeWidth="1"
+        />
 
         {/* filament coil */}
         <path
@@ -167,9 +181,7 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
 
   const isDark = theme === 'dark';
   const bgColor = isDark ? '#050816' : '#f8f7ff';
-  const bloomColor = isDark
-    ? 'rgba(255, 210, 90, 0.96)'
-    : 'rgba(255, 235, 160, 0.98)';
+  const bloomColor = isDark ? 'rgba(255, 210, 90, 0.96)' : 'rgba(255, 235, 160, 0.98)';
 
   useEffect(() => {
     playBulbSound('flicker');
@@ -186,7 +198,10 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
 
     const flickerInterval = setInterval(() => {
       const elapsed = Date.now() - startRef.current;
-      if (elapsed > 1400) { clearInterval(flickerInterval); return; }
+      if (elapsed > 1400) {
+        clearInterval(flickerInterval);
+        return;
+      }
       setGlow(Math.random() < 0.55 ? Math.random() * 0.38 : 0.02);
     }, 65);
 
@@ -216,7 +231,10 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
 
     doneTimer = setTimeout(() => {
       setVisible(false);
-      setTimeout(() => { setPhase('done'); onComplete(); }, 480);
+      setTimeout(() => {
+        setPhase('done');
+        onComplete();
+      }, 480);
     }, 2950);
 
     return () => {
@@ -244,9 +262,7 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background: `radial-gradient(circle at 50% 44%, ${bloomColor} 0%, transparent ${28 + bloomScale * 72}%)`,
-                opacity: bloomScale > 0.75
-                  ? 1 - (bloomScale - 0.75) * 3.2
-                  : bloomScale * 1.3,
+                opacity: bloomScale > 0.75 ? 1 - (bloomScale - 0.75) * 3.2 : bloomScale * 1.3,
               }}
             />
           )}
@@ -263,9 +279,9 @@ export default function BulbLoader({ onComplete }: BulbLoaderProps) {
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.28 }}
             >
-              {phase === 'flicker'  && 'warming up...'}
+              {phase === 'flicker' && 'warming up...'}
               {phase === 'struggle' && 'powering on...'}
-              {phase === 'bloom'    && 'ready'}
+              {phase === 'bloom' && 'ready'}
             </motion.p>
           </AnimatePresence>
         </motion.div>

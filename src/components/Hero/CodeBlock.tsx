@@ -5,32 +5,82 @@ import { useEffect, useRef, useState } from 'react';
   chosen to read well on both theme backgrounds.
 */
 const TOKEN_COLORS: Record<string, [string, string]> = {
-  kw:   ['#c792ea', '#7c3aed'],   // keyword      — purple
-  vn:   ['#82aaff', '#1d4ed8'],   // variable     — blue
-  pu:   ['#89ddff', '#0891b2'],   // punctuation  — cyan
-  str:  ['#c3e88d', '#15803d'],   // string       — green
-  num:  ['#f78c6c', '#c2410c'],   // number/stat  — orange
-  bool: ['#ff9cac', '#be185d'],   // boolean      — pink
-  cmt:  ['#4a5568', '#94a3b8'],   // comment      — grey
-  err:  ['#ef4444', '#dc2626'],   // error        — red
-  ok:   ['#22c55e', '#16a34a'],   // success      — green
+  kw: ['#c792ea', '#7c3aed'], // keyword      — purple
+  vn: ['#82aaff', '#1d4ed8'], // variable     — blue
+  pu: ['#89ddff', '#0891b2'], // punctuation  — cyan
+  str: ['#c3e88d', '#15803d'], // string       — green
+  num: ['#f78c6c', '#c2410c'], // number/stat  — orange
+  bool: ['#ff9cac', '#be185d'], // boolean      — pink
+  cmt: ['#4a5568', '#94a3b8'], // comment      — grey
+  err: ['#ef4444', '#dc2626'], // error        — red
+  ok: ['#22c55e', '#16a34a'], // success      — green
 };
 
 type Token = { text: string; tk: string };
-type Line  = { tokens: Token[]; kind?: 'error' | 'success' | 'comment' };
+type Line = { tokens: Token[]; kind?: 'error' | 'success' | 'comment' };
 
 const LINES: Line[] = [
-  { tokens: [{ text: 'const ', tk: 'kw' }, { text: 'engineer', tk: 'vn' }, { text: ' = {', tk: 'pu' }] },
-  { tokens: [{ text: '  name',  tk: 'kw' }, { text: ':  ', tk: 'pu' }, { text: '"Udhaya Prakash M"',   tk: 'str' }, { text: ',', tk: 'pu' }] },
-  { tokens: [{ text: '  role',  tk: 'kw' }, { text: ':  ', tk: 'pu' }, { text: '"Full Stack Engineer"', tk: 'str' }, { text: ',', tk: 'pu' }] },
-  { tokens: [{ text: '  stack', tk: 'kw' }, { text: ': ',  tk: 'pu' }, { text: '["React","Node.js","Next.js"]', tk: 'str' }, { text: ',', tk: 'pu' }] },
-  { tokens: [{ text: '  loves', tk: 'kw' }, { text: ': ',  tk: 'pu' }, { text: '"real-time systems"',  tk: 'str' }, { text: ',', tk: 'pu' }] },
-  { tokens: [{ text: '  users', tk: 'kw' }, { text: ': ',  tk: 'pu' }, { text: '"150K+"',              tk: 'num' }, { text: ',', tk: 'pu' }] },
-  { tokens: [{ text: '  open',  tk: 'kw' }, { text: ':  ', tk: 'pu' }, { text: 'true',                 tk: 'bool' }] },
+  {
+    tokens: [
+      { text: 'const ', tk: 'kw' },
+      { text: 'engineer', tk: 'vn' },
+      { text: ' = {', tk: 'pu' },
+    ],
+  },
+  {
+    tokens: [
+      { text: '  name', tk: 'kw' },
+      { text: ':  ', tk: 'pu' },
+      { text: '"Udhaya Prakash M"', tk: 'str' },
+      { text: ',', tk: 'pu' },
+    ],
+  },
+  {
+    tokens: [
+      { text: '  role', tk: 'kw' },
+      { text: ':  ', tk: 'pu' },
+      { text: '"Full Stack Engineer"', tk: 'str' },
+      { text: ',', tk: 'pu' },
+    ],
+  },
+  {
+    tokens: [
+      { text: '  stack', tk: 'kw' },
+      { text: ': ', tk: 'pu' },
+      { text: '["React","Node.js","Next.js"]', tk: 'str' },
+      { text: ',', tk: 'pu' },
+    ],
+  },
+  {
+    tokens: [
+      { text: '  loves', tk: 'kw' },
+      { text: ': ', tk: 'pu' },
+      { text: '"real-time systems"', tk: 'str' },
+      { text: ',', tk: 'pu' },
+    ],
+  },
+  {
+    tokens: [
+      { text: '  users', tk: 'kw' },
+      { text: ': ', tk: 'pu' },
+      { text: '"150K+"', tk: 'num' },
+      { text: ',', tk: 'pu' },
+    ],
+  },
+  {
+    tokens: [
+      { text: '  open', tk: 'kw' },
+      { text: ':  ', tk: 'pu' },
+      { text: 'true', tk: 'bool' },
+    ],
+  },
   { tokens: [{ text: '}', tk: 'pu' }] },
   { tokens: [{ text: '', tk: 'pu' }] },
   { kind: 'comment', tokens: [{ text: '// TODO: fix bugs before interview 😅', tk: 'cmt' }] },
-  { kind: 'error',   tokens: [{ text: '// ⚠ RuntimeError: too_much_coffee detected ☕', tk: 'err' }] },
+  {
+    kind: 'error',
+    tokens: [{ text: '// ⚠ RuntimeError: too_much_coffee detected ☕', tk: 'err' }],
+  },
   { kind: 'comment', tokens: [{ text: '// Restarting engineer...', tk: 'cmt' }] },
   { kind: 'success', tokens: [{ text: '// ✅ Ready to ship.', tk: 'ok' }] },
 ];
@@ -44,8 +94,8 @@ export default function CodeBlock() {
     () => document.documentElement.getAttribute('data-theme') !== 'light'
   );
   const [visibleChars, setVisibleChars] = useState<number[]>(LINES.map(() => 0));
-  const [activeLine,   setActiveLine]   = useState(0);
-  const [done,         setDone]         = useState(false);
+  const [activeLine, setActiveLine] = useState(0);
+  const [done, setDone] = useState(false);
 
   // track theme changes without needing context
   useEffect(() => {
@@ -66,7 +116,10 @@ export default function CodeBlock() {
     setDone(false);
 
     function tick() {
-      if (li >= LINES.length) { setDone(true); return; }
+      if (li >= LINES.length) {
+        setDone(true);
+        return;
+      }
       const full = lineText(LINES[li]);
       const isComical = LINES[li].kind === 'error' || LINES[li].kind === 'success';
 
@@ -89,7 +142,9 @@ export default function CodeBlock() {
     }
 
     timerRef.current = setTimeout(tick, 500);
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
   function color(tk: string) {
@@ -99,18 +154,18 @@ export default function CodeBlock() {
 
   // theme-aware surface values via CSS vars so they auto-adapt
   const wrapStyle: React.CSSProperties = {
-    background:           'var(--color-surface)',
-    border:               '1px solid var(--color-border)',
-    backdropFilter:       'blur(18px)',
+    background: 'var(--color-surface)',
+    border: '1px solid var(--color-border)',
+    backdropFilter: 'blur(18px)',
     WebkitBackdropFilter: 'blur(18px)',
-    boxShadow:            isDark
+    boxShadow: isDark
       ? '0 8px 40px rgba(0,0,0,0.5), 0 0 50px rgba(109,40,217,0.15)'
       : '0 8px 32px rgba(109,40,217,0.12), 0 2px 8px rgba(0,0,0,0.08)',
     fontFamily: "'JetBrains Mono','Fira Code','Cascadia Code',Consolas,monospace",
   };
 
   const barStyle: React.CSSProperties = {
-    background:  'var(--color-surface-2)',
+    background: 'var(--color-surface-2)',
     borderBottom: '1px solid var(--color-border)',
   };
 
@@ -118,16 +173,12 @@ export default function CodeBlock() {
 
   return (
     <div className="w-full max-w-[460px] rounded-2xl overflow-hidden" style={wrapStyle}>
-
       {/* ── title bar ── */}
       <div className="flex items-center gap-[7px] px-3 py-[9px]" style={barStyle}>
         <span className="w-[11px] h-[11px] rounded-full flex-shrink-0 bg-[#ff5f57]" />
         <span className="w-[11px] h-[11px] rounded-full flex-shrink-0 bg-[#febc2e]" />
         <span className="w-[11px] h-[11px] rounded-full flex-shrink-0 bg-[#28c840]" />
-        <span
-          className="ml-2 text-[0.68rem] tracking-wide select-none"
-          style={{ color: lnColor }}
-        >
+        <span className="ml-2 text-[0.68rem] tracking-wide select-none" style={{ color: lnColor }}>
           engineer.ts
         </span>
       </div>
@@ -136,14 +187,14 @@ export default function CodeBlock() {
       <pre
         className="m-0 overflow-x-auto min-h-[14rem]"
         style={{
-          padding:    '0.9rem 0.6rem 1rem',
-          fontSize:   'clamp(0.67rem, 1.45vw, 0.79rem)',
+          padding: '0.9rem 0.6rem 1rem',
+          fontSize: 'clamp(0.67rem, 1.45vw, 0.79rem)',
           lineHeight: '1.9',
-          color:      'var(--color-text)',
+          color: 'var(--color-text)',
         }}
       >
         {LINES.map((line, idx) => {
-          const full  = lineText(line);
+          const full = lineText(line);
           const shown = visibleChars[idx] ?? 0;
           const isCurrent = !done && idx === activeLine;
 
@@ -165,10 +216,14 @@ export default function CodeBlock() {
 
           const rowBg =
             line.kind === 'error'
-              ? isDark ? 'rgba(239,68,68,0.12)' : 'rgba(220,38,38,0.08)'
+              ? isDark
+                ? 'rgba(239,68,68,0.12)'
+                : 'rgba(220,38,38,0.08)'
               : line.kind === 'success'
-              ? isDark ? 'rgba(34,197,94,0.1)'  : 'rgba(22,163,74,0.08)'
-              : 'transparent';
+                ? isDark
+                  ? 'rgba(34,197,94,0.1)'
+                  : 'rgba(22,163,74,0.08)'
+                : 'transparent';
 
           return (
             <div

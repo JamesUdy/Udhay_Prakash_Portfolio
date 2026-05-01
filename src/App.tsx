@@ -6,12 +6,12 @@ import BottomNav from './components/Navbar/BottomNav';
 import BulbLoader from './components/Loader/BulbLoader';
 import PageTransition from './components/Loader/PageTransition';
 
-const Hero     = lazy(() => import('./pages/Hero'));
-const About    = lazy(() => import('./pages/About'));
+const Hero = lazy(() => import('./pages/Hero'));
+const About = lazy(() => import('./pages/About'));
 const Timeline = lazy(() => import('./pages/Timeline'));
 const Projects = lazy(() => import('./pages/Projects'));
-const Contact  = lazy(() => import('./pages/Contact'));
-const Resume   = lazy(() => import('./pages/Resume'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Resume = lazy(() => import('./pages/Resume'));
 
 // #region Helpers
 
@@ -79,12 +79,12 @@ function AnimatedRoutes() {
               lazy chunks load silently behind the overlay */}
           <Suspense fallback={null}>
             <Routes location={{ ...location, pathname: renderedPath }}>
-              <Route path="/"         element={<Hero />}     />
-              <Route path="/about"    element={<About />}    />
+              <Route path="/" element={<Hero />} />
+              <Route path="/about" element={<About />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/contact"  element={<Contact />}  />
-              <Route path="/resume"   element={<Resume />}   />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/resume" element={<Resume />} />
             </Routes>
           </Suspense>
         </motion.div>

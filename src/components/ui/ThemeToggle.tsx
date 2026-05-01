@@ -69,8 +69,8 @@ function InkBleedOverlay({ x, y, toLight, onDone }: BleedProps) {
     const maxR = Math.ceil(Math.hypot(window.innerWidth, window.innerHeight));
 
     // colors
-    const burstColor  = toLight ? '#e8e0ff' : '#0d0820';
-    const edgeColor   = toLight ? '#f8f7ff' : '#050816';
+    const burstColor = toLight ? '#e8e0ff' : '#0d0820';
+    const edgeColor = toLight ? '#f8f7ff' : '#050816';
 
     el.style.setProperty('--bleed-x', `${x}px`);
     el.style.setProperty('--bleed-y', `${y}px`);
@@ -86,15 +86,16 @@ function InkBleedOverlay({ x, y, toLight, onDone }: BleedProps) {
     return () => clearTimeout(timer);
   }, [x, y, toLight, onDone]);
 
-  return createPortal(
-    <div ref={ref} className="ink-bleed" aria-hidden="true" />,
-    document.body
-  );
+  return createPortal(<div ref={ref} className="ink-bleed" aria-hidden="true" />, document.body);
 }
 
 /* ─── Lightning sparks ───────────────────────────────────────────────────── */
 
-interface SparksProps { x: number; y: number; toLight: boolean }
+interface SparksProps {
+  x: number;
+  y: number;
+  toLight: boolean;
+}
 
 function LightningSparks({ x, y, toLight }: SparksProps) {
   const color = toLight ? '#c4b5fd' : '#7c3aed';
@@ -113,11 +114,13 @@ function LightningSparks({ x, y, toLight }: SparksProps) {
           <div
             key={i}
             className="spark"
-            style={{
-              '--spark-angle': `${angle}deg`,
-              '--spark-len': `${len}px`,
-              '--spark-color': color,
-            } as React.CSSProperties}
+            style={
+              {
+                '--spark-angle': `${angle}deg`,
+                '--spark-len': `${len}px`,
+                '--spark-color': color,
+              } as React.CSSProperties
+            }
           />
         );
       })}
@@ -194,14 +197,15 @@ export default function ThemeToggle() {
             <motion.div
               key={theme}
               initial={{ rotate: -90, opacity: 0, scale: 0.5, filter: 'blur(4px)' }}
-              animate={{ rotate: 0,   opacity: 1, scale: 1,   filter: 'blur(0px)' }}
-              exit={{    rotate:  90, opacity: 0, scale: 0.5, filter: 'blur(4px)' }}
+              animate={{ rotate: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              exit={{ rotate: 90, opacity: 0, scale: 0.5, filter: 'blur(4px)' }}
               transition={{ duration: 0.28, ease: [0.34, 1.56, 0.64, 1] }}
             >
-              {theme === 'dark'
-                ? <Sun  size={20} strokeWidth={1.8} />
-                : <Moon size={20} strokeWidth={1.8} />
-              }
+              {theme === 'dark' ? (
+                <Sun size={20} strokeWidth={1.8} />
+              ) : (
+                <Moon size={20} strokeWidth={1.8} />
+              )}
             </motion.div>
           </AnimatePresence>
         </motion.button>

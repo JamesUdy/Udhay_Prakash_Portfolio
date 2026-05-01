@@ -5,17 +5,17 @@ import { useScrollDirection } from '../../hooks/useScrollDirection';
 import ThemeToggle from '../ui/ThemeToggle';
 
 const NAV_ITEMS = [
-  { path: '/',          label: 'Home',       Icon: Home         },
-  { path: '/about',     label: 'About',      Icon: User         },
-  { path: '/timeline',  label: 'Experience', Icon: CalendarDays },
-  { path: '/projects',  label: 'Projects',   Icon: Layers       },
-  { path: '/contact',   label: 'Contact',    Icon: Mail         },
-  { path: '/resume',    label: 'Resume',     Icon: FileText     },
+  { path: '/', label: 'Home', Icon: Home },
+  { path: '/about', label: 'About', Icon: User },
+  { path: '/timeline', label: 'Experience', Icon: CalendarDays },
+  { path: '/projects', label: 'Projects', Icon: Layers },
+  { path: '/contact', label: 'Contact', Icon: Mail },
+  { path: '/resume', label: 'Resume', Icon: FileText },
 ] as const;
 
 export default function BottomNav() {
   const location = useLocation();
-  const navigate  = useNavigate();
+  const navigate = useNavigate();
   const scrollDir = useScrollDirection(8);
 
   const isHidden = scrollDir === 'down';
@@ -28,7 +28,6 @@ export default function BottomNav() {
       className="fixed bottom-6 left-0 right-0 z-50 flex justify-center pointer-events-none"
     >
       <div className="pointer-events-auto flex items-center gap-1 px-3 py-2.5 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]/80 backdrop-blur-xl shadow-xl">
-
         {NAV_ITEMS.map(({ path, label, Icon }) => {
           const isActive = location.pathname === path;
           return (
@@ -67,7 +66,6 @@ export default function BottomNav() {
 
         {/* Theme toggle with zap animation */}
         <ThemeToggle />
-
       </div>
     </motion.nav>
   );

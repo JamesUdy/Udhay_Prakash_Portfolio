@@ -7,21 +7,33 @@ import './skills.css';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
 const cardStagger = {
   hidden: {},
-  show:   { transition: { staggerChildren: 0.06 } },
+  show: { transition: { staggerChildren: 0.06 } },
 };
 
 type Category = 'All' | 'Frontend' | 'Backend' | 'Cloud' | 'Tools';
 
 const categoryMap: Record<Exclude<Category, 'All'>, string[]> = {
-  Frontend: ['React JS', 'Next JS', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Redux', 'Flutter', 'Dart', 'Shadcn', 'HTML 5', 'CSS 3'],
-  Backend:  ['Node JS', 'Express.js', 'Python', 'Firebase'],
-  Cloud:    ['MongoDB', 'Redis', 'AWS', 'GCP', 'Docker'],
-  Tools:    ['GitHub', 'Figma', 'VSCode', 'Postman', 'Vercel', 'Netlify', 'Markdown'],
+  Frontend: [
+    'React JS',
+    'Next JS',
+    'TypeScript',
+    'JavaScript',
+    'Tailwind CSS',
+    'Redux',
+    'Flutter',
+    'Dart',
+    'Shadcn',
+    'HTML 5',
+    'CSS 3',
+  ],
+  Backend: ['Node JS', 'Express.js', 'Python', 'Firebase'],
+  Cloud: ['MongoDB', 'Redis', 'AWS', 'GCP', 'Docker'],
+  Tools: ['GitHub', 'Figma', 'VSCode', 'Postman', 'Vercel', 'Netlify', 'Markdown'],
 };
 
 const tabs: Category[] = ['All', 'Frontend', 'Backend', 'Cloud', 'Tools'];
@@ -31,9 +43,8 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-60px' });
   const [active, setActive] = useState<Category>('All');
 
-  const visible = active === 'All'
-    ? skillSet
-    : skillSet.filter((s) => categoryMap[active]?.includes(s.name));
+  const visible =
+    active === 'All' ? skillSet : skillSet.filter((s) => categoryMap[active]?.includes(s.name));
 
   return (
     <section className="skills-root" ref={ref}>
@@ -43,8 +54,12 @@ export default function Skills() {
         initial="hidden"
         animate={inView ? 'show' : 'hidden'}
       >
-        <motion.p variants={fadeUp} className="skills-eyebrow">SKILLS &amp; TOOLS</motion.p>
-        <motion.h2 variants={fadeUp} className="skills-heading">What I Work With.</motion.h2>
+        <motion.p variants={fadeUp} className="skills-eyebrow">
+          SKILLS &amp; TOOLS
+        </motion.p>
+        <motion.h2 variants={fadeUp} className="skills-heading">
+          What I Work With.
+        </motion.h2>
       </motion.div>
 
       {/* ── Category filter tabs ── */}

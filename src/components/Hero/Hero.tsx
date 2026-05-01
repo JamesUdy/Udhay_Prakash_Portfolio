@@ -24,8 +24,12 @@ const FloatingImg = styled.img`
   filter: drop-shadow(0 0 28px rgba(167, 139, 250, 0.5));
 
   @keyframes floatAvatar {
-    from { transform: translateY(0px); }
-    to   { transform: translateY(16px); }
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(16px);
+    }
   }
 `;
 
@@ -36,12 +40,17 @@ const stagger = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' as const } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' as const } },
 };
 
 const charVariant = {
   hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
-  show:   { opacity: 1, y: 0,  filter: 'blur(0px)', transition: { duration: 0.45, ease: 'easeOut' as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.45, ease: 'easeOut' as const },
+  },
 };
 
 const typewriterSubtitles = [
@@ -82,35 +91,55 @@ function TypewriterText({ texts }: { texts: string[] }) {
   return (
     <span className="hero-typewriter">
       {displayed}
-      <span className="hero-typewriter-cursor" aria-hidden="true">|</span>
+      <span className="hero-typewriter-cursor" aria-hidden="true">
+        |
+      </span>
     </span>
   );
 }
 
 const marqueeSkills = [
-  'React', 'TypeScript', 'Node.js', 'MongoDB', 'Next.js',
-  'Python', 'Firebase', 'Redux', 'Tailwind CSS', 'REST APIs',
+  'React',
+  'TypeScript',
+  'Node.js',
+  'MongoDB',
+  'Next.js',
+  'Python',
+  'Firebase',
+  'Redux',
+  'Tailwind CSS',
+  'REST APIs',
 ];
 
 const floatingBadges = [
-  { label: '3+ Years Exp', icon: '🚀', delay: 0.9,  cls: 'badge--tl' },
-  { label: '20+ Projects', icon: '💼', delay: 1.1,  cls: 'badge--tr' },
-  { label: 'Open to Work', icon: '✅', delay: 1.3,  cls: 'badge--bl' },
-  { label: 'Full Stack',   icon: '⚡', delay: 1.5,  cls: 'badge--br' },
+  { label: '3+ Years Exp', icon: '🚀', delay: 0.9, cls: 'badge--tl' },
+  { label: '20+ Projects', icon: '💼', delay: 1.1, cls: 'badge--tr' },
+  { label: 'Open to Work', icon: '✅', delay: 1.3, cls: 'badge--bl' },
+  { label: 'Full Stack', icon: '⚡', delay: 1.5, cls: 'badge--br' },
 ];
 
 const nameVariants = [
-  { lang: 'English',  text: 'Udhaya Prakash M' },
-  { lang: 'Tamil',    text: 'உதய பிரகாஷ் மு'   },
+  { lang: 'English', text: 'Udhaya Prakash M' },
+  { lang: 'Tamil', text: 'உதய பிரகாஷ் மு' },
   { lang: 'Tamil-Brahmi', text: '𑀉𑀢𑀬 𑀧𑀭𑀓𑀲 𑀫𑀼' },
-  { lang: 'German',   text: 'Udaya Prakasch M' },
+  { lang: 'German', text: 'Udaya Prakasch M' },
   { lang: 'Japanese', text: 'ウダヤ プラカシュ ム' },
 ];
 
 const langFade = {
-  initial: { opacity: 0, y: 18,  filter: 'blur(8px)' },
-  animate: { opacity: 1, y: 0,   filter: 'blur(0px)', transition: { duration: 0.7,  ease: 'easeOut' as const } },
-  exit:    { opacity: 0, y: -18, filter: 'blur(8px)', transition: { duration: 0.45, ease: 'easeIn'  as const } },
+  initial: { opacity: 0, y: 18, filter: 'blur(8px)' },
+  animate: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.7, ease: 'easeOut' as const },
+  },
+  exit: {
+    opacity: 0,
+    y: -18,
+    filter: 'blur(8px)',
+    transition: { duration: 0.45, ease: 'easeIn' as const },
+  },
 };
 
 export default function Hero() {
@@ -142,14 +171,8 @@ export default function Hero() {
       <div className="aurora-blob aurora-blob--3" />
 
       <div className="hero-inner">
-
         {/* ── Row 1: centered header ── */}
-        <motion.div
-          className="hero-header"
-          variants={stagger}
-          initial="hidden"
-          animate="show"
-        >
+        <motion.div className="hero-header" variants={stagger} initial="hidden" animate="show">
           <motion.div variants={fadeUp} className="hero-role-chip">
             <span className="hero-role-dot" />
             Full Stack Engineer
@@ -197,14 +220,17 @@ export default function Hero() {
 
           {/* CTA buttons */}
           <motion.div variants={fadeUp} className="hero-ctas">
-            <Link to="/projects" className="hero-cta hero-cta--primary">View Work</Link>
-            <Link to="/contact"  className="hero-cta hero-cta--secondary">Contact Me</Link>
+            <Link to="/projects" className="hero-cta hero-cta--primary">
+              View Work
+            </Link>
+            <Link to="/contact" className="hero-cta hero-cta--secondary">
+              Contact Me
+            </Link>
           </motion.div>
         </motion.div>
 
         {/* ── Row 2: code editor + sphere ── */}
         <div className="hero-bottom-row">
-
           {/* Code editor */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -259,16 +285,18 @@ export default function Hero() {
               </motion.div>
             ))}
           </motion.div>
-
-        </div>{/* end hero-bottom-row */}
-
-      </div>{/* end hero-inner */}
+        </div>
+        {/* end hero-bottom-row */}
+      </div>
+      {/* end hero-inner */}
 
       {/* Scrolling tech marquee */}
       <div className="hero-marquee-wrap">
         <div className="hero-marquee-track">
           {[...marqueeSkills, ...marqueeSkills].map((s, i) => (
-            <span key={i} className="hero-marquee-item">{s}</span>
+            <span key={i} className="hero-marquee-item">
+              {s}
+            </span>
           ))}
         </div>
       </div>
@@ -280,7 +308,16 @@ export default function Hero() {
         transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden="true"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </motion.div>

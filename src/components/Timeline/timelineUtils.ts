@@ -12,10 +12,18 @@ export function useIsMobile() {
   return mobile;
 }
 
-export function getLaneW(mobile: boolean) { return mobile ? 24 : 36; }
-export function getSvgW(mobile: boolean)  { return getLaneW(mobile) * 2 + 20; }
-export function laneX(lane: number, laneW: number) { return 14 + lane * laneW; }
-export function shortSha(sha: string) { return sha.slice(0, 7); }
+export function getLaneW(mobile: boolean) {
+  return mobile ? 24 : 36;
+}
+export function getSvgW(mobile: boolean) {
+  return getLaneW(mobile) * 2 + 20;
+}
+export function laneX(lane: number, laneW: number) {
+  return 14 + lane * laneW;
+}
+export function shortSha(sha: string) {
+  return sha.slice(0, 7);
+}
 // #endregion
 
 // #region Tea count

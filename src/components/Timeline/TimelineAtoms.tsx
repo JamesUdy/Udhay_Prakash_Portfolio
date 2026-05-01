@@ -3,10 +3,20 @@ import { motion, useInView } from 'framer-motion';
 import { teaCupsNow } from './timelineUtils';
 
 // #region StatBadge
-export function StatBadge({ added, removed, files }: { added: number; removed: number; files: number }) {
+export function StatBadge({
+  added,
+  removed,
+  files,
+}: {
+  added: number;
+  removed: number;
+  files: number;
+}) {
   return (
     <span className="git-stat">
-      <span className="git-stat-files">{files} file{files !== 1 ? 's' : ''}</span>
+      <span className="git-stat-files">
+        {files} file{files !== 1 ? 's' : ''}
+      </span>
       <span className="git-stat-add">+{added}</span>
       <span className="git-stat-del">−{removed}</span>
     </span>
@@ -28,7 +38,10 @@ export function TypedText({ text, delay = 0 }: { text: string; delay?: number })
       const tick = setInterval(() => {
         i++;
         setDisplayed(text.slice(0, i));
-        if (i >= text.length) { clearInterval(tick); setDone(true); }
+        if (i >= text.length) {
+          clearInterval(tick);
+          setDone(true);
+        }
       }, 18);
       return () => clearInterval(tick);
     }, delay);
@@ -50,11 +63,14 @@ export function CommitParticles({ color, active }: { color: string; active: bool
   return (
     <div className="git-particles" aria-hidden>
       {Array.from({ length: 8 }, (_, i) => (
-        <motion.span key={i} className="git-particle"
+        <motion.span
+          key={i}
+          className="git-particle"
           style={{ background: color, '--i': i } as React.CSSProperties}
           initial={{ scale: 0, opacity: 1, x: 0, y: 0 }}
           animate={{
-            scale: [0, 1, 0], opacity: [1, 0.7, 0],
+            scale: [0, 1, 0],
+            opacity: [1, 0.7, 0],
             x: Math.cos((i / 8) * Math.PI * 2) * 32,
             y: Math.sin((i / 8) * Math.PI * 2) * 32,
           }}
@@ -103,13 +119,24 @@ export function TermBar() {
       <span className="git-term-dot git-term-dot--yellow" />
       <span className="git-term-dot git-term-dot--green" />
       <span className="git-term-title">
-        <svg viewBox="0 0 16 16" fill="currentColor" width={13} height={13} style={{ marginRight: 5, opacity: 0.7 }}>
+        <svg
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          width={13}
+          height={13}
+          style={{ marginRight: 5, opacity: 0.7 }}
+        >
           <path d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25Zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25ZM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L5.44 8 3.72 6.28a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l2.25 2.25c.141.14.22.331.22.53Zm1.5 1.5h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5Z" />
         </svg>
         git log --oneline --graph — udhay/career
       </span>
       <span className="git-term-cmd">
-        <motion.span animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1.1, repeat: Infinity }}>▌</motion.span>
+        <motion.span
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 1.1, repeat: Infinity }}
+        >
+          ▌
+        </motion.span>
       </span>
     </div>
   );
@@ -118,7 +145,7 @@ export function TermBar() {
 
 // #region LogHeader
 export function LogHeader() {
-  const ref    = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
   return (
     <div ref={ref} className="git-log-header">

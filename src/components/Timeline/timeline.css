@@ -38,8 +38,12 @@
 }
 
 @keyframes tlGradShift {
-  0%   { background-position:   0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ══════════════════════════════════════════
@@ -74,7 +78,6 @@
   box-shadow: 0 0 8px #915eff88;
   transform-origin: top;
 }
-
 
 /* ── Main log panel ── */
 .git-main {
@@ -113,9 +116,18 @@
   flex-shrink: 0;
 }
 
-.git-term-dot--red    { background: #ff5f56; box-shadow: 0 0 5px #ff5f5666; }
-.git-term-dot--yellow { background: #ffbd2e; box-shadow: 0 0 5px #ffbd2e66; }
-.git-term-dot--green  { background: #27c93f; box-shadow: 0 0 5px #27c93f66; }
+.git-term-dot--red {
+  background: #ff5f56;
+  box-shadow: 0 0 5px #ff5f5666;
+}
+.git-term-dot--yellow {
+  background: #ffbd2e;
+  box-shadow: 0 0 5px #ffbd2e66;
+}
+.git-term-dot--green {
+  background: #27c93f;
+  box-shadow: 0 0 5px #27c93f66;
+}
 
 .git-term-title {
   flex: 1;
@@ -211,7 +223,9 @@
   opacity: 0.6;
 }
 
-.git-card--future:hover { background: none; }
+.git-card--future:hover {
+  background: none;
+}
 
 /* card head */
 .git-card-head {
@@ -318,7 +332,9 @@
   transition: color 0.18s;
 }
 
-.git-card:hover .git-chevron { color: var(--color-text); }
+.git-card:hover .git-chevron {
+  color: var(--color-text);
+}
 
 /* commit message */
 .git-msg {
@@ -375,9 +391,17 @@
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-.git-stat-files { color: var(--color-text-muted); }
-.git-stat-add   { color: #3fb950; font-weight: 600; }
-.git-stat-del   { color: #f85149; font-weight: 600; }
+.git-stat-files {
+  color: var(--color-text-muted);
+}
+.git-stat-add {
+  color: #3fb950;
+  font-weight: 600;
+}
+.git-stat-del {
+  color: #f85149;
+  font-weight: 600;
+}
 
 /* HEAD badge */
 .git-head-badge {
@@ -465,8 +489,12 @@
   transition: background 0.15s;
 }
 
-.git-diff-line:last-child { border-bottom: none; }
-.git-diff-line:hover { background: color-mix(in srgb, #3fb950 9%, transparent); }
+.git-diff-line:last-child {
+  border-bottom: none;
+}
+.git-diff-line:hover {
+  background: color-mix(in srgb, #3fb950 9%, transparent);
+}
 
 .git-diff-plus {
   color: #3fb950;
@@ -497,8 +525,13 @@
 }
 
 @keyframes cursorBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* ══════════════════════════════════════════

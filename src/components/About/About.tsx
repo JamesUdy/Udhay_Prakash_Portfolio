@@ -5,20 +5,20 @@ import './About.css';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
 const stagger = {
   hidden: {},
-  show:   { transition: { staggerChildren: 0.12 } },
+  show: { transition: { staggerChildren: 0.12 } },
 };
 
 // numeric target, suffix shown after count, display label
 const stats: { end: number; suffix: string; label: string }[] = [
-  { end: 2,   suffix: '+',  label: 'Years Experience'   },
-  { end: 150, suffix: 'K',  label: 'MAU Scaled To'      },
-  { end: 75,  suffix: '%',  label: 'Pipeline Speedup'   },
-  { end: 60,  suffix: '%',  label: 'Sync Errors Reduced'},
+  { end: 2, suffix: '+', label: 'Years Experience' },
+  { end: 150, suffix: 'K', label: 'MAU Scaled To' },
+  { end: 75, suffix: '%', label: 'Pipeline Speedup' },
+  { end: 60, suffix: '%', label: 'Sync Errors Reduced' },
 ];
 
 function CountUp({ end, suffix, active }: { end: number; suffix: string; active: boolean }) {
@@ -43,12 +43,17 @@ function CountUp({ end, suffix, active }: { end: number; suffix: string; active:
     return () => clearInterval(timer);
   }, [active, end]);
 
-  return <>{count}{suffix}</>;
+  return (
+    <>
+      {count}
+      {suffix}
+    </>
+  );
 }
 
 export default function About() {
-  const ref     = useRef<HTMLDivElement>(null);
-  const inView  = useInView(ref, { once: true, margin: '-80px' });
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
   const statsRef = useRef<HTMLDivElement>(null);
   const statsInView = useInView(statsRef, { once: true, margin: '-40px' });
 
@@ -61,8 +66,12 @@ export default function About() {
         initial="hidden"
         animate={inView ? 'show' : 'hidden'}
       >
-        <motion.p variants={fadeUp} className="about-eyebrow">INTRODUCTION</motion.p>
-        <motion.h2 variants={fadeUp} className="about-heading">Who I Am.</motion.h2>
+        <motion.p variants={fadeUp} className="about-eyebrow">
+          INTRODUCTION
+        </motion.p>
+        <motion.h2 variants={fadeUp} className="about-heading">
+          Who I Am.
+        </motion.h2>
       </motion.div>
 
       {/* ── Split layout: bio | abstract shape ── */}
@@ -86,7 +95,9 @@ export default function About() {
           </p>
 
           <div className="about-ctas">
-            <Link to="/contact" className="about-cta about-cta--primary">Let's Talk</Link>
+            <Link to="/contact" className="about-cta about-cta--primary">
+              Let's Talk
+            </Link>
             <a
               href="https://read.cv/jamesudy"
               target="_blank"

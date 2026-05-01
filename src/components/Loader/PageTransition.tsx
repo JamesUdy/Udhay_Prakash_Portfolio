@@ -109,9 +109,8 @@ function TerminalLine({
     if (done) onDone();
   }, [done, onDone]);
 
-  const textColor = isFinal && done
-    ? accent
-    : isDark ? 'rgba(200,195,230,0.9)' : 'rgba(60,50,90,0.88)';
+  const textColor =
+    isFinal && done ? accent : isDark ? 'rgba(200,195,230,0.9)' : 'rgba(60,50,90,0.88)';
 
   return (
     <motion.div
@@ -194,7 +193,7 @@ export default function PageTransition({ pathname, onComplete }: PageTransitionP
   if (!config) return null;
 
   const bgColor = isDark ? 'rgba(5,8,22,0.96)' : 'rgba(248,247,255,0.96)';
-  const cardBg  = isDark ? 'rgba(21,16,48,0.85)' : 'rgba(237,233,254,0.75)';
+  const cardBg = isDark ? 'rgba(21,16,48,0.85)' : 'rgba(237,233,254,0.75)';
   const cardBorder = `${config.accent}44`;
 
   return createPortal(
@@ -287,7 +286,9 @@ export default function PageTransition({ pathname, onComplete }: PageTransitionP
             >
               <motion.div
                 className="h-full rounded-b-2xl"
-                style={{ background: `linear-gradient(to right, ${config.accent}88, ${config.accent})` }}
+                style={{
+                  background: `linear-gradient(to right, ${config.accent}88, ${config.accent})`,
+                }}
                 initial={{ width: '0%' }}
                 animate={{ width: `${(completedLines / allLines.length) * 100}%` }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}

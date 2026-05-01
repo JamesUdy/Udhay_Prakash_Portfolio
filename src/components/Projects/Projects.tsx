@@ -5,10 +5,10 @@ import './projects.css';
 
 // #region Status badge
 const STATUS_CONFIG: Record<Project['status'], { label: string; cls: string }> = {
-  completed:    { label: 'Completed',    cls: 'proj-badge--completed' },
-  developing:   { label: 'Developing',   cls: 'proj-badge--developing' },
-  abandoned:    { label: 'Abandoned',    cls: 'proj-badge--abandoned' },
-  'coming-soon':{ label: 'Coming Soon',  cls: 'proj-badge--soon' },
+  completed: { label: 'Completed', cls: 'proj-badge--completed' },
+  developing: { label: 'Developing', cls: 'proj-badge--developing' },
+  abandoned: { label: 'Abandoned', cls: 'proj-badge--abandoned' },
+  'coming-soon': { label: 'Coming Soon', cls: 'proj-badge--soon' },
 };
 
 function StatusBadge({ status }: { status: Project['status'] }) {
@@ -48,7 +48,7 @@ const ExternalIcon = () => (
 
 // #region ProjectCard
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const ref    = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   const sizeClass = `proj-card--${project.size ?? 'medium'}`;
@@ -85,8 +85,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <p className="proj-hover-desc">{project.description}</p>
 
           <div className="proj-tags">
-            {project.tags.map(t => (
-              <span key={t.skills} className="proj-tag">{t.skills}</span>
+            {project.tags.map((t) => (
+              <span key={t.skills} className="proj-tag">
+                {t.skills}
+              </span>
             ))}
           </div>
 
@@ -94,9 +96,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.source && (
               <LinkBtn href={project.source} icon={<GithubIcon />} label="Source" />
             )}
-            {project.demo && (
-              <LinkBtn href={project.demo} icon={<ExternalIcon />} label="Live" />
-            )}
+            {project.demo && <LinkBtn href={project.demo} icon={<ExternalIcon />} label="Live" />}
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 // #region Projects section
 export default function Projects() {
-  const headerRef    = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const headerInView = useInView(headerRef, { once: true, margin: '-60px' });
 
   return (
@@ -121,13 +121,19 @@ export default function Projects() {
       >
         <motion.p
           className="proj-eyebrow"
-          variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
         >
           PROJECTS
         </motion.p>
         <motion.h2
           className="proj-heading"
-          variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+          variants={{
+            hidden: { opacity: 0, y: 24 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          }}
         >
           Things I&apos;ve Built.
         </motion.h2>

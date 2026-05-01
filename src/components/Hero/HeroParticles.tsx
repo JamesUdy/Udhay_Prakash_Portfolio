@@ -12,7 +12,9 @@ function ensureEngine() {
   if (!enginePromise) {
     enginePromise = initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => { engineReady = true; });
+    }).then(() => {
+      engineReady = true;
+    });
   }
   return enginePromise;
 }
